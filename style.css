@@ -1,0 +1,118 @@
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #616971;
+    background-color: rgb(233, 233, 233);
+}
+
+
+
+/* Navbar */
+
+
+
+.container img {
+    width: 10rem;
+    height: 3rem;
+}
+
+.navbar {
+
+    letter-spacing: .1rem;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
+    z-index: 1;
+}
+
+.nav-link {
+    color: #aaaaaa!important;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: #FF725E!important;
+}
+
+.nav-item {
+    margin-right: 35px;
+}
+
+
+
+
+/* Setor principal */
+
+
+
+
+#container-imagem-esquerda {
+    max-width: 100%;
+    position: absolute;
+}
+
+#imagem-esquerda {
+    max-width: 100%;
+    min-width: 80%;
+}    
+
+#background {
+    width: 100%;
+    background-color: #D1EBEC;
+    padding-bottom: 90px;
+    height: 650px;
+}
+
+.setor-principal .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#coluna-esquerda {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    right: 50px;
+}
+
+.setor-principal .col-xl-6 button {
+    background-color: #FF725E;
+    width: 65%;
+}
+
+.setor-principal .jumbotron.jumbotron-fluid {
+    background-color: #D1EBEC;
+    background-image: url(imagens/Flat-Mountains.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.setor-principal .container {
+    padding: 0;
+}
+
+.setor-principal .container h4, p {
+    max-width: 70%;
+}
+
+.setor-principal .container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+#coluna-direita {
+    display: flex;
+    padding-top: 10%;
+    text-align: left;
+    flex-direction: column;
+    left: 50px;
+}
+
+.setor-principal #coluna-direita .container {
+    
+
+
+}
+
+@media (max-width: 992px) {
+
+}
