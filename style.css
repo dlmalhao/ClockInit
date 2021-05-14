@@ -71,12 +71,11 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    right: 50px;
 }
 
-.setor-principal .col-xl-6 button {
+.setor-principal .col-xl-5 button {
     background-color: #FF725E;
-    width: 65%;
+    width: 80%;
 }
 
 .setor-principal .jumbotron.jumbotron-fluid {
@@ -91,7 +90,8 @@ body {
 }
 
 .setor-principal .container h4, p {
-    max-width: 70%;
+    max-width: 80%;
+    line-height: 30px;
 }
 
 .setor-principal .container-fluid {
@@ -104,7 +104,13 @@ body {
     padding-top: 10%;
     text-align: left;
     flex-direction: column;
-    left: 50px;
+    align-items: start;
+}
+
+#coluna-direita .container {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .setor-principal #coluna-direita .container {
