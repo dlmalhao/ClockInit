@@ -1,0 +1,157 @@
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #616971;
+    background-color: rgb(233, 233, 233);
+    margin: 0 auto;
+}
+
+
+
+/* Navbar */
+
+
+
+.navbar .container img {
+    width: 10rem;
+    height: 3rem;
+}
+
+.navbar {
+    background-color: black;
+    letter-spacing: .1rem;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2);
+    z-index: 1;
+}
+
+.nav-link {
+    color: #aaaaaa!important;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: #FF725E!important;
+}
+
+.nav-item {
+    margin-right: 35px;
+}
+
+
+
+
+/* Setor principal */
+
+
+
+
+#background {
+    background-color: #D1EBEC;
+    height: 92vh;
+    margin: 0;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+#imagem-esquerda {
+    max-width: 100%;
+    min-width: 80%;
+}    
+
+#coluna-esquerda {
+    bottom: 30px;
+}
+
+.setor-principal .row {
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.setor-principal .col-xl-6 button {
+    background-color: #FF725E;
+    width: 65%;
+    height: 45px;
+}
+
+.setor-principal .container {
+    padding: 0;
+}
+
+.setor-principal .container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+#coluna-direita {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    bottom: 30px;
+}
+
+#coluna-direita .container {
+    max-width: 65%;
+}
+
+#coluna-direita-header {
+    font-size: 30px;
+    word-spacing: 7px;
+}
+
+@media (max-width: 1430px) {
+    #coluna-direita-header {
+        font-size: 25px;
+    }
+
+    #coluna-direita {
+        bottom: 0px;
+        top: 20px;
+    }
+
+    #coluna-esquerda {
+        bottom: 0px;
+        top: 20px;
+    }
+}
+
+@media (max-width: 1199px) {
+    #coluna-esquerda {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #imagem-esquerda {
+        min-width:auto;
+        width: 60%;
+    }
+
+    #coluna-direita {
+        padding-top: 4%;
+    }
+
+    #coluna-direita .container {
+        max-width: 50%;
+    }
+
+    .setor-principal .col-xl-6 button {
+        max-width: 50%;
+    }
+
+    #coluna-direita-text {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #coluna-direita-header {
+        font-size: 20px;
+    }
+
+    #coluna-esquerda img {
+        width: 80%;
+    }
+}
