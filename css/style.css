@@ -2,7 +2,7 @@ body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: #616971;
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(255, 255, 255);
     margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@ body {
 .navbar {
     background-color: black;
     letter-spacing: .1rem;
-    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
     z-index: 1;
 }
 
@@ -39,7 +39,7 @@ body {
 
 
 
-/* Setor principal */
+/* Index Page */
 
 
 
@@ -52,6 +52,7 @@ body {
     align-items: center;
     margin: 0;
     padding-bottom: 0;
+
 }
 
 .row {
@@ -112,6 +113,153 @@ body {
 
 #mountains img {
     width: 60%;
+}
+
+.card-body {
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, .1);
+}
+
+#content {
+    padding: 10%;
+}
+
+.background-card {
+    padding: 20px;
+}
+
+.background-card img {
+    width: 100%;
+    height: 40vh;
+}
+
+.card.text-center {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#cooking {
+    background-color: #C79BE3;
+}
+
+#music {
+    background-color: #505A8D;
+}
+
+#content {
+    background-color: #D1EBEC;
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+#fit {
+    background-color: #FFF9A4;
+}
+
+#literature {
+    background-color: #78D1AD;
+}
+
+#content .col-lg-4 {
+    margin-bottom: 10%;
+}
+
+
+
+
+/* Login / Register Page */
+
+
+
+#login-background {
+    margin-top: 5%;
+    padding-bottom: 3%;
+    width: 80vh;
+
+}
+
+#login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    margin-bottom: 7%;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+#enter-btn {
+    background-color: #FF725E;
+}
+
+.login-register-body form hr {
+    width: 100%;
+    margin-top: 7%;
+}
+
+
+#account-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+#check-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-check {
+    padding-left: 0;
+}
+
+#age-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+#age-form-day {
+    width: 20%;
+}
+
+#age-form-month {
+    width: 37%;
+}
+
+#age-form-year {
+    width: 20%;
+}
+
+#other-btn {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#terms-group label {
+    margin-left: 1.5rem;
+}
+
+#gender-group{
+margin-top: 2%;
+}
+
+#age-group{
+margin-top: 5%;
+}
+
+#terms-group {
+    margin-top: 2%;
 }
 
 
@@ -192,5 +340,11 @@ body {
 
     #coluna-direita {
         justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .setor-principal .col-xl-6 button {
+        font-size: 13px;
     }
 }
