@@ -16,47 +16,47 @@
         </div>
     </nav>
 
-    <div class="container" id="login-background">
+    <div class="container" id="sign-background">
         <div class="container" id="login-header">
-            <h4>Register to ClockInit</h4>
+            <h4>REGISTER</h4>
         </div>
-        <form>
+        <form id="register-form">
             <div class="container" id="form-container">
                 <div class="form-group">
-                    <label for="user-email">What's your email?</label>
-                    <input type="email" class="form-control" id="user-email">
+                    <label for="register-email">What's your email?</label>
+                    <input type="email" class="form-control" id="register-email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="user-password">What's your password?</label>
-                    <input type="password" class="form-control" id="user-password">
+                    <label for="register-password">What's your password?</label>
+                    <input type="password" class="form-control" id="register-password" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="user-confirm-password">Confirm your password</label>
-                    <input type="password" class="form-control" id="user-confirm-password">
+                    <label for="register-confirm-password">Confirm your password</label>
+                    <input type="password" class="form-control" id="register-confirm-password" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="username">What should we call you?</label>
-                    <input type="email" class="form-control" id="username">
+                    <label for="register-username">What should we call you?</label>
+                    <input type="email" class="form-control" id="register-username" required>
                 </div>
 
                 <div class="form-check" id="gender-group">
                     <label for="check-btns">What's your gender?</label>
                     <div class="div" id="check-btns">
-                        <div>
-                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-male">
+                        <div id="checked-btn">
+                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-male" value="male" required>
                             <label class="form-check-label" for="gender-check-male">Male</label>
                         </div>
                     
-                        <div>
-                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-female" checked>
+                        <div id="checked-btn">
+                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-female" value="female" required>
                             <label class="form-check-label" for="gender-check-female">Female</label>
                         </div>
 
-                        <div>
-                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-other">
+                        <div id="checked-btn">
+                            <input class="form-check-input" type="radio" name="gender-check" id="gender-check-other" value="other" required> 
                             <label class="form-check-label" for="gender-check-other">Other</label>
                         </div>
                     </div>
@@ -65,13 +65,13 @@
                 <div class="form-group" id="age-group">
                     <label for="birth-date">What's your age?</label>
                     <div id="age-form">
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" id="age-value" required>
                     </div>
                 </div>
 
                 <div class="form-group" id="terms-group">
                     <input type="checkbox" class="form-check-input ml-0" id="terms-conditions">
-                    <label for="terms-conditions">I agree with the <a href="">Terms and conditions</a></label>
+                    <label for="terms-conditions">I agree with the <a href="https://www.seg-social.pt/subsidio-de-desemprego" target="_blank">Terms and conditions</a></label>
                 </div>
 
                 <button type="submit" class="btn btn-dark" id="enter-btn">Register</button>
@@ -83,9 +83,12 @@
             </div>
         </form>
     </div>
-
-
-
+    
+    
+    <script src="../test.js"></script>
+    <script src="../js/view/RegisterView.js"></script>
+    <script src="../js/model/UserModel.js"></script>
+    <script src="../js/controller/UserController.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="js/all.min.js"></script>

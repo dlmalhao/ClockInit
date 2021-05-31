@@ -36,6 +36,10 @@ body {
     margin-right: 35px;
 }
 
+.navbar .container a {
+    margin: 0 auto;
+}
+
 
 
 
@@ -115,12 +119,9 @@ body {
     width: 60%;
 }
 
-.card-body {
-    box-shadow: 0 0 20px 7px rgba(0, 0, 0, .1);
-}
-
 #content {
     padding: 10%;
+    background-color: #D1EBEC;
 }
 
 .background-card {
@@ -140,6 +141,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, .1);
 }
 
 #cooking {
@@ -148,10 +150,6 @@ body {
 
 #music {
     background-color: #505A8D;
-}
-
-#content {
-    background-color: #D1EBEC;
 }
 
 .card-title {
@@ -176,12 +174,22 @@ body {
 /* Login / Register Page */
 
 
+.login-register-body {
+    background-color: #F0F0F3;
+}
 
-#login-background {
+#sign-background {
     margin-top: 5%;
+    margin-bottom: 5%;
     padding-bottom: 3%;
-    width: 80vh;
+    width: 50vh;
+    background-color: #fffefe;
+    box-shadow: 0 0 20px 7px rgba(0, 0, 0, .1);
+}
 
+.login-register-body .center-background {
+    width: 100%;
+    height: 92vh;
 }
 
 #login-header {
@@ -195,8 +203,6 @@ body {
 #form-container {
     display: flex;
     flex-direction: column;
-    padding-right: 15%;
-    padding-left: 15%;
 }
 
 #enter-btn {
@@ -207,7 +213,6 @@ body {
     width: 100%;
     margin-top: 7%;
 }
-
 
 #account-text{
     display: flex;
@@ -260,6 +265,10 @@ margin-top: 5%;
 
 #terms-group {
     margin-top: 2%;
+}
+
+.login-register-body .center-background {
+    margin-top: 135px;
 }
 
 
@@ -315,6 +324,10 @@ margin-top: 5%;
     #coluna-esquerda img {
         width: 80%;
     }
+
+    .login-register-body .center-background {
+        margin-top: 110px;
+    }
 }
 
 @media (max-width: 574px) {
@@ -341,6 +354,18 @@ margin-top: 5%;
     #coluna-direita {
         justify-content: center;
     }
+
+   .login-register-body .center-background {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 420px) {
+    #sign-background {
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -348,3 +373,49 @@ margin-top: 5%;
         font-size: 13px;
     }
 }
+
+
+
+@media (max-height: 722px) {
+    .login-register-body #account-text h5 {
+        font-size: 1.1rem;
+    }
+    
+    .login-register-body form {
+        font-size: small;
+    }
+
+    .login-register-body #age-form input {
+        font-size: small;
+    }
+
+    .login-register-body #account-text h5 {
+        font-size: medium;
+    }
+
+    #login-header h4 {
+        font-size: large;
+    }
+
+    #sign-background {
+        width: 100%;
+        height: 470px;
+    }
+}
+
+@media (max-height: 613px) {
+    .login-register-body #account-text h5 {
+        font-size: small;
+    }
+
+    .login-register-body .center-background {
+        display: flex;
+        height: 80vh;
+    }
+
+    #sign-background {
+        width: 300px;
+        height: 440px;
+    }
+}
+
