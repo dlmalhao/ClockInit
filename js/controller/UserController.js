@@ -5,7 +5,7 @@ export default class UserController {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
     }
 
-    register(email, password, username, gender, age, exp, achieves, inventory, spintime) {
+    register(email, password, username, gender, age) {
         if (!this.users.some(user => user.email === email) && !this.users.some(user => user.username === username)) {
             this.users.push(new UserModel(email, password));
             localStorage.setItem('users', JSON.stringify(this.users))

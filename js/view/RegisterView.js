@@ -22,11 +22,6 @@ export default class UserView {
                     throw Error('Password and Confirm Password are not equal');
                 }
 
-                this.registerExp = "0";
-                this.registerAchieves = "";
-                this.registerInventory = "";
-                this.registerLastSpin = "";
-
                 this.userController.register(
                     this.registerEmail.value, 
                     this.registerPassword.value, 
