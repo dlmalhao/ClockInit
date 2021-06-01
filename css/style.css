@@ -378,34 +378,3 @@ margin-top: 5%;
         font-size: 13px;
     }
 }
-
-
-
-@media (max-height: 722px) {
-    .login-register-body #account-text h5 {
-        font-size: 1.1rem;
-    }
-    
-    .login-register-body form {
-        font-size: small;
-    }
-
-    .login-register-body #age-form input {
-        font-size: small;
-    }
-
-    .login-register-body #account-text h5 {
-        font-size: medium;
-    }
-
-    #login-header h4 {
-        font-size: large;
-    }
-}
-
-@media (max-height: 613px) {
-    .login-register-body #account-text h5 {
-        font-size: small;
-    }
-}
-
