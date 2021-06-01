@@ -401,11 +401,6 @@ margin-top: 5%;
     #login-header h4 {
         font-size: large;
     }
-
-    #sign-background {
-        width: 100%;
-        height: 470px;
-    }
 }
 
 @media (max-height: 613px) {
@@ -416,11 +411,6 @@ margin-top: 5%;
     .login-register-body .center-background {
         display: flex;
         height: 80vh;
-    }
-
-    #sign-background {
-        width: 300px;
-        height: 440px;
     }
 }
 
