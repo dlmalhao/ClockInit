@@ -407,10 +407,5 @@ margin-top: 5%;
     .login-register-body #account-text h5 {
         font-size: small;
     }
-
-    .login-register-body .center-background {
-        display: flex;
-        height: 80vh;
-    }
 }
 
