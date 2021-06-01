@@ -1,13 +1,13 @@
 export default class UserModel {
-    constructor(email, password, username, gender, age, exp, achieves, inventory, spintime) {
+    constructor(email, password, username, gender, age) {
         this.email = email
         this.password = password
         this.username = username
         this.gender = gender
         this.age = age
-        this.exp = exp
-        this.achieves = achieves
-        this.inventory = inventory
-        this.spintime = spintime
+        this.exp = "0"
+        this.achieves = ""
+        this.inventory = ""
+        this.spintime = ""
     }
 }
