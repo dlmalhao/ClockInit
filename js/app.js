@@ -100,8 +100,10 @@ class App {
             }
         }
         else {
+            console.log("bye")
             localStorage.setItem('users', JSON.stringify(users));
         }
+
     }
 }
 
