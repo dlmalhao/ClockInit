@@ -1,4 +1,4 @@
-import UserModel from "../model/UserModel"
+import UserModel from "../model/UserModel.js"
 
 export default class UserController {
     constructor() {
@@ -7,7 +7,7 @@ export default class UserController {
 
     register(email, password, username, gender, age) {
         if (!this.users.some(user => user.email === email) && !this.users.some(user => user.username === username)) {
-            this.users.push(new UserModel(email, password));
+            this.users.push(new UserModel(email, password, username, gender, age));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
             throw Error(`User with username "${username}" already exists!`);
