@@ -2,7 +2,7 @@ body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: #616971;
-    background-color: aliceblue;
+    background: linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(138,138,138,1) 100%);
     margin: 0 auto;
 }
 
@@ -40,11 +40,6 @@ body {
     margin: 0 auto;
 }
 
-.navbar .container .collapse.navbar-collapse .navbar-nav.mx-auto .nav-item button {
-    background: none;
-    border: none;
-    letter-spacing: 2px;
-}
 
 
 
@@ -376,7 +371,8 @@ margin-top: 5%;
 }
 
 #terms-group {
-    margin-top: 2%;
+    margin-top: 5%;
+    margin-bottom: 0;
 }
 
 .login-register-body .center-background {
@@ -387,21 +383,18 @@ margin-top: 5%;
     visibility: hidden;
 }
 
+.form-group .container.check {
+    margin-left: 6px;
+}
 
+#loginModal {
+    padding-top: 22vh;
+}
 
-/* Modals */
-
-
-
-
-
-
-/* Index Page Hover Effects */
-
-
-
-
-
+#registerModal .modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 
@@ -536,11 +529,24 @@ margin-top: 5%;
 }
 
 
-@media only screen and (max-width: 480px){
+@media (max-width: 480px){
     .modal-dialog{ width: 95% !important; }
-    .modal.fade .modal-dialog{ transform: scale(0.7); }
+
+    .modal.fade .modal-dialog{ transform: scale(0.9); }
+
+    #registerModal .modal-footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-footer .change-modal {
+        margin-bottom: 1rem;
+    }
 }
 
+@media (max-width: 446px) {
+
+}
 
 @media (max-width: 420px) {
     #sign-background {

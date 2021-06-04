@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>ClockInit - Home Page</title>
+    <title>ClockInit - Welcome</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/ab51c64d63.js" crossorigin="anonymous"></script>
 </head>
@@ -31,11 +30,17 @@
                     <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Activities</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contacts</a></li>
-                    <li class="nav-item"><button type="button" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</button></li>
+                    <li class="nav-item"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+
+    <!-- Header -->
+
+
 
     <div id="background">
         <div class="setor-principal">
@@ -59,63 +64,13 @@
         </div>
     </div>
 
-    <!-- <section id="content">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="background-card" id="cooking">
-                            <img src="./img/Cooking.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">We know that you cook well, but how about getting new flavors?</h5>
-                            <p class="card-body">Get to know different recipes from different countries that will surprise everyone!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="background-card" id="music">
-                            <img src="./img/Music.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">When words fail, music speaks!</h5>
-                            <p class="card-body">Choose your style and find new songs with our playlists</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="background-card" id="fit">
-                            <img src="./img/Fit.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Exercise your mind and body!</h5>
-                            <p class="card-body">Our weekly workouts have all in one. Improve your health and have fun at the same time.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="background-card" id="literature">
-                            <img src="./img/Literature.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Are you the master of literature? </h5>
-                            <p class="card-body">We have a library full of interesting books waiting to be read</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-        </section> -->
 
 
-    <!-- <div class="container" id="containerCarousel">
+    <!-- Carrossel -->
+
+
+
+    <div class="container" id="containerCarousel">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -125,48 +80,58 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="card text-center">
-                        <div class="background-card" id="fit">
-                            <img src="./img/Fit.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Exercise your mind and body!</h5>
-                            <p class="card-body">Our weekly workouts have all in one. Improve your health and have fun
-                                at the same time.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card text-center">
-                        <div class="background-card" id="cooking">
-                            <img src="./img/Cooking.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">What about tasting new flavors?</h5>
-                            <p class="card-body">Get to know different recipes from different countries that will
-                                surprise everyone!</p>
+                    <div class="background-card" id="fit">
+                        <img src="./img/Fit.svg" class="card-img-top" alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Fit</div>
+                            <p class="image__description">
+                                Exercise your mind and your body!
+                            </p>
+                            <div class="icon">
+                                <a href=""><i class="fas fa-info"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="card text-center">
-                        <div class="background-card" id="music">
-                            <img src="./img/Music.svg" class="card-img-top" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">When words fail, music speaks!</h5>
-                            <p class="card-body">Choose your favorite style and find new songs with our playlists</p>
+                    <div class="background-card" id="cooking">
+                        <img src="./img/Cooking.svg" class="card-img-top" alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Cooking</div>
+                            <p class="image__description">
+                                What about tasting new flavors?
+                            </p>
+                            <div class="icon">
+                                <a href=""><i class="fas fa-info"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="card text-center">
-                        <div class="background-card" id="literature">
-                            <img src="./img/Literature.svg" class="card-img-top" alt="">
+                    <div class="background-card" id="music">
+                        <img src="./img/Music.svg" class="card-img-top" alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Music</div>
+                            <p class="image__description">
+                                When words fail, music speaks!
+                            </p>
+                            <div class="icon">
+                                <a href=""><i class="fas fa-info"></i></a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Are you the master of literature? </h5>
-                            <p class="card-body">We have a library with many kinds of interesting books waiting to be read!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-card" id="literature">
+                        <img src="./img/Literature.svg" class="card-img-top" alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Literature</div>
+                            <p class="image__description">
+                                Are you the master of literature?
+                            </p>
+                            <div class="icon">
+                                <a href=""><i class="fas fa-info"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,96 +145,130 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div> -->
+    </div>
 
 
 
+    <!-- Login Modal -->
 
-    <!-- <div class="container-moldura">
-        <div class="moldura"> -->
-            <div class="container" id="containerCarousel">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel" data-slide-to="1"></li>
-                        <li data-target="#carousel" data-slide-to="2"></li>
-                        <li data-target="#carousel" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="background-card" id="fit">
-                                <img src="./img/Fit.svg" class="card-img-top" alt="">
-                                <div class="image__overlay image__overlay--primary">
-                                    <div class="image__title">Fit</div>
-                                    <p class="image__description">
-                                        Exercise your mind and your body!
-                                    </p>
-                                    <div class="icon">
-                                        <a href=""><i class="fas fa-info"></i></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal fade" id="loginModal" tabindex="-1" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Login</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <form action="">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="loginUsername">Username</label>
+                                        <input type="text" class="form-control" id="loginUsername">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Password</label>
+                                        <input type="password" class="form-control" id="loginPassword">
+                                    </div>
+                                    <div>
+                                        <a data-dismiss="modal" data-toggle="modal" href="#registerModal">I don't have an account</a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="background-card" id="cooking">
-                                <img src="./img/Cooking.svg" class="card-img-top" alt="">
-                                <div class="image__overlay image__overlay--primary">
-                                    <div class="image__title">Cooking</div>
-                                    <p class="image__description">
-                                        What about tasting new flavors?
-                                    </p>
-                                    <div class="icon">
-                                        <a href=""><i class="fas fa-info"></i></a>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-dark">Login</button>
+                                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="background-card" id="music">
-                                <img src="./img/Music.svg" class="card-img-top" alt="">
-                                <div class="image__overlay image__overlay--primary">
-                                    <div class="image__title">Music</div>
-                                    <p class="image__description">
-                                        When words fail, music speaks!
-                                    </p>
-                                    <div class="icon">
-                                        <a href=""><i class="fas fa-info"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="background-card" id="literature">
-                                <img src="./img/Literature.svg" class="card-img-top" alt="">
-                                <div class="image__overlay image__overlay--primary">
-                                    <div class="image__title">Literature</div>
-                                    <p class="image__description">
-                                        Are you the master of literature?
-                                    </p>
-                                    <div class="icon">
-                                        <a href=""><i class="fas fa-info"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
-        <!-- </div>
-    </div> -->
+        </div>
+    </div>
 
 
-    <!-- Modal -->
 
-    
+    <!-- Register Modal -->
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal fade" id="registerModal" tabindex="-1" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Register</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <form action="">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="registerEmail">Email</label>
+                                        <input type="email" class="form-control" id="registerEmail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerUsername">Username</label>
+                                        <input type="text" class="form-control" id="registernUsername">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword">Password</label>
+                                        <input type="password" class="form-control" id="registerPassword">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword2">Confirm Password</label>
+                                        <input type="password" class="form-control" id="registerPassword2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="check-btns">Gender</label>
+                                        <div class="container check">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender-check" id="gender-check-male" value="male" required checked>
+                                                <label class="form-check-label" for="gender-check-male">Male</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender-check" id="gender-check-female" value="female" required>
+                                                <label class="form-check-label" for="gender-check-female">Female</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender-check" id="gender-check-other" value="other" required> 
+                                                <label class="form-check-label" for="gender-check-other">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="age-group">
+                                        <label for="birth-date">What's your age?</label>
+                                        <div id="age-form">
+                                            <input type="date" class="form-control" id="age-value" required>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-group" id="terms-group">
+                                        <input type="checkbox" class="form-check-input ml-0" id="terms-conditions">
+                                        <label for="terms-conditions">I agree with the <a href="">Terms and conditions</a></label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="change-modal">
+                                        <a data-dismiss="modal" data-toggle="modal" href="#loginModal">I already have an account!</a>
+                                    </div>
+                                    <div class="buttons-modal">
+                                        <button type="submit" class="btn btn-dark">Register</button>
+                                        <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
