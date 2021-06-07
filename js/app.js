@@ -7,7 +7,7 @@ class App {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             '': [
-                
+                UserView
             ],
             'index': [
                 UserView
