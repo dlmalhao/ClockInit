@@ -12,11 +12,11 @@
     <script src="https://kit.fontawesome.com/ab51c64d63.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="indexBody">
 
     <!-- navbar -->
 
-    <nav class="navbar navbar-expand-md navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
 
             <a class="navbar-brand"><img src="./img/logo.svg" alt="Logo"></a>
@@ -28,9 +28,12 @@
             <div class="collapse navbar-collapse" id="navbarResponsiva">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Activities</a></li>
+                    <li class="nav-item" id="activities-navlink"><a href="" class="nav-link">Activities</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contacts</a></li>
-                    <li class="nav-item"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+                    <li class="nav-item" id="store-btn"><a href="" class="nav-link">Store</a></li>
+                    <li class="nav-item" id="nav-name-of-user"><a href="#" class="nav-link" id="name-of-user"></a></li>
+                    <li class="nav-item" id="logout-btn"><a href="" class="nav-link" id="logout-trigger">Log out</a></li>
+                    <li class="nav-item" id="signinButton"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
                 </ul>
             </div>
         </div>
@@ -55,14 +58,36 @@
                         <p id="coluna-direita-text">We offer several activities for free, however you need to register.
                         </p>
                     </div>
-                    <button type="button" class="btn btn-dark">Come have fun with us!</button>
+                    <button type="button" class="btn btn-dark" id="start-btn">Come have fun with us!</button>
                 </div>
             </div>
         </div>
         <div class="container-fluid" id="mountains">
             <img src="./img/Flat-Mountains.svg" alt="">
         </div>
+    
+    
+        <!-- Admin Button -->
+
+
+        <div class="admin-btn-background" id="admin-btn-background">
+            <a href="/html/admin.html"><button type="button" class="btn btn-dark" id="admin-btn">A</button></a>
+        </div>
+    
+    
     </div>
+
+
+
+
+
+    
+
+
+
+
+
+    
 
 
 
@@ -88,7 +113,7 @@
                                 Exercise your mind and your body!
                             </p>
                             <div class="icon">
-                                <a href=""><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -102,7 +127,7 @@
                                 What about tasting new flavors?
                             </p>
                             <div class="icon">
-                                <a href=""><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -116,7 +141,7 @@
                                 When words fail, music speaks!
                             </p>
                             <div class="icon">
-                                <a href=""><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +155,7 @@
                                 Are you the master of literature?
                             </p>
                             <div class="icon">
-                                <a href=""><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -151,6 +176,8 @@
 
     <!-- Login Modal -->
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -161,18 +188,22 @@
                                 <h4 class="modal-title">Login</h4>
                                 <button class="close" data-dismiss="modal">x</button>
                             </div>
-                            <form action="">
+                            <form action="" id="login-form">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="loginUsername">Username</label>
-                                        <input type="text" class="form-control" id="loginUsername">
+                                        <input type="text" class="form-control" id="loginUsername" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="loginPassword">Password</label>
-                                        <input type="password" class="form-control" id="loginPassword">
+                                        <input type="password" class="form-control" id="loginPassword" required>
+                                    </div>
+                                    <div class="form-group" id="form-show-password">
+                                        <input type="checkbox" class="form-check-input ml-0" id="show-password">
+                                        <label for="show-password">Show Password</label>
                                     </div>
                                     <div>
-                                        <a data-dismiss="modal" data-toggle="modal" href="#registerModal">I don't have an account</a>
+                                        <a href="" id="register-modal-toggle" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">I don't have an account</a>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -201,25 +232,25 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">Register</h4>
-                                <button class="close" data-dismiss="modal">x</button>
+                                <button class="close" id="register-modal-close" data-dismiss="modal">x</button>
                             </div>
-                            <form action="">
+                            <form action="" id="register-form">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="registerEmail">Email</label>
-                                        <input type="email" class="form-control" id="registerEmail">
+                                        <input type="email" class="form-control" id="register-email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="registerUsername">Username</label>
-                                        <input type="text" class="form-control" id="registernUsername">
+                                        <input type="text" class="form-control" id="register-username" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="registerPassword">Password</label>
-                                        <input type="password" class="form-control" id="registerPassword">
+                                        <input type="password" class="form-control" id="register-password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="registerPassword2">Confirm Password</label>
-                                        <input type="password" class="form-control" id="registerPassword2">
+                                        <input type="password" class="form-control" id="register-confirm-password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="check-btns">Gender</label>
@@ -246,18 +277,20 @@
                                     </div>
                     
                                     <div class="form-group" id="terms-group">
-                                        <input type="checkbox" class="form-check-input ml-0" id="terms-conditions">
+                                        <input type="checkbox" class="form-check-input ml-0" id="terms-conditions" required>
                                         <label for="terms-conditions">I agree with the <a href="">Terms and conditions</a></label>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <div class="change-modal">
-                                        <a data-dismiss="modal" data-toggle="modal" href="#loginModal">I already have an account!</a>
+                                        <a href="" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">I already have an account!</a>
                                     </div>
                                     <div class="buttons-modal">
                                         <button type="submit" class="btn btn-dark">Register</button>
                                         <button class="btn btn-danger" data-dismiss="modal">Close</button>
                                     </div>
+                                    <button type="button" id="trigger-modal" data-toggle="modal" data-target="#SuccessModal"></button>
+                                    <button type="button" id="close-modal" data-dismiss="modal"></button>
                                 </div>
                             </form>
                         </div>
@@ -269,19 +302,77 @@
 
 
 
+    <!-- Success Modal -->
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal-box">
+                    <!-- Modal -->
+                    <div class="modal fade" id="SuccessModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content clearfix">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <div class="icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <h3 class="title">Success!</h3>
+                                    <p class="description" id="success-content"> You are now registered to our website! </p>
+                                    <a href=""><button type="button" class="btn">Done</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Error Modal -->
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal-box">
+                    <!-- Modal -->
+                    <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content clearfix" id="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <div class="icon" id="icon">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <h3 class="title">Error!</h3>
+                                    <p class="description" id="error-content"> Register failed!  </p>
+                                    <a data-dismiss="modal"><button type="button" id="modalBtn" data class="btn">Try again</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="./js/all.min.js"></script>
+        <script type="module" src="/js/app.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>

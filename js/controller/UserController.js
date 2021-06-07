@@ -10,7 +10,7 @@ export default class UserController {
             this.users.push(new UserModel(email, password, username, gender, age));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
-            throw Error(`User with username "${username}" already exists!`);
+            throw Error(`Your email or username is already registered!`);
         }
     }
 
@@ -28,5 +28,19 @@ export default class UserController {
 
     isLogged() {
         return sessionStorage.getItem('loggedUser') ? true : false
+    }
+
+    isAdminLogged () {
+        if(sessionStorage.getItem('loggedUser')) {
+            if(sessionStorage.getItem('loggedUser') === "Admin" ) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+        }   
     }
 }

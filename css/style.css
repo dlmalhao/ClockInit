@@ -2,8 +2,12 @@ body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: #616971;
-    background: linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(138,138,138,1) 100%);
     margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
+.indexBody {
+    background: linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(138,138,138,1) 100%);
 }
 
 
@@ -71,7 +75,6 @@ body {
     min-width: 80%;
 }    
 
-
 .setor-principal .row {
     display: flex;
 }
@@ -121,6 +124,31 @@ body {
 
 
 
+/* Admin button */
+
+
+
+.admin-btn-background {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.admin-btn-background button{
+    top: 20rem;
+    position: fixed;
+    z-index: 1;
+    right: -15px;
+    width: 2.3rem;
+    height: 2.3rem;
+    transition: right 0.5s, width 0.5s, height 0.5s;
+}
+
+.admin-btn-background button:hover{
+    right: -5px;
+    height: 2.7rem;
+    width: 2.7rem;
+}
 /* Carousel Index Page */
 
 
@@ -265,9 +293,7 @@ body {
 
 
 
-
-
-/* Login / Register Page */
+/* Modais Index Page*/
 
 
 
@@ -277,8 +303,6 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='631' preserveAspectRatio='none' viewBox='0 0 1440 631'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1109%26quot%3b)' fill='none'%3e%3cpath d='M287.168%2c769.373C354.082%2c768.246%2c411.519%2c726.291%2c444.854%2c668.261C478.05%2c610.473%2c486.926%2c538.826%2c452.319%2c481.872C418.812%2c426.727%2c351.683%2c407.518%2c287.168%2c408.749C225.122%2c409.933%2c165.698%2c435.489%2c132.588%2c487.975C97.098%2c544.233%2c87.979%2c615.433%2c120.005%2c673.733C153.132%2c734.038%2c218.373%2c770.532%2c287.168%2c769.373' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M56.069%2c734.516C100.124%2c733.934%2c142.188%2c713.979%2c164.674%2c676.09C187.619%2c637.427%2c187.892%2c589.192%2c165.424%2c550.25C142.945%2c511.288%2c101.045%2c487.139%2c56.069%2c487.849C12.254%2c488.541%2c-25.065%2c515.949%2c-47.463%2c553.612C-70.441%2c592.25%2c-79.955%2c640.012%2c-57.626%2c679.028C-35.175%2c718.257%2c10.874%2c735.113%2c56.069%2c734.516' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M810.5%2c579.021C858.29%2c581.279%2c906.021%2c561.002%2c930.718%2c520.026C956.159%2c477.816%2c956.008%2c423.442%2c929.199%2c382.088C904.352%2c343.761%2c856.163%2c335.688%2c810.5%2c334.588C762.086%2c333.422%2c705.868%2c334.289%2c681.469%2c376.122C656.97%2c418.127%2c682.373%2c468.494%2c708.467%2c509.527C732.135%2c546.744%2c766.444%2c576.94%2c810.5%2c579.021' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M202.089%2c185.592C253.1%2c188.534%2c311.111%2c183.682%2c337.654%2c140.021C364.852%2c95.282%2c345.895%2c39.144%2c318.088%2c-5.219C292.279%2c-46.395%2c250.67%2c-77.474%2c202.089%2c-76.255C155.28%2c-75.08%2c118.291%2c-40.683%2c95.755%2c0.361C74.171%2c39.672%2c68.819%2c86.912%2c91.147%2c125.806C113.563%2c164.854%2c157.139%2c183%2c202.089%2c185.592' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1102.399%2c466.183C1150.469%2c466.029%2c1188.132%2c429.548%2c1211.621%2c387.608C1234.489%2c346.778%2c1241.719%2c298.121%2c1219.631%2c256.864C1196.32%2c213.323%2c1151.769%2c182.234%2c1102.399%2c183.601C1054.944%2c184.915%2c1018.436%2c221.278%2c995.895%2c263.058C974.637%2c302.46%2c971.167%2c348.661%2c991.957%2c388.312C1014.376%2c431.07%2c1054.12%2c466.338%2c1102.399%2c466.183' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M756.496%2c867.808C812.21%2c865.837%2c849.091%2c817.004%2c877.117%2c768.812C905.355%2c720.256%2c928.445%2c664.569%2c904.138%2c613.931C876.877%2c557.14%2c819.481%2c516.426%2c756.496%2c517.531C695.049%2c518.609%2c646.074%2c564.516%2c617.56%2c618.957C591.209%2c669.268%2c592.438%2c728.317%2c620.124%2c777.906C648.571%2c828.858%2c698.178%2c869.872%2c756.496%2c867.808' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1416.743%2c569.053C1467.903%2c570.452%2c1513.216%2c536.627%2c1537.098%2c491.362C1559.477%2c448.945%2c1551.474%2c399.451%2c1528.406%2c357.406C1504.247%2c313.373%2c1466.968%2c272.011%2c1416.743%2c271.998C1366.502%2c271.985%2c1327.937%2c312.659%2c1304.979%2c357.348C1284.123%2c397.944%2c1285.969%2c444.714%2c1307.276%2c485.075C1330.288%2c528.665%2c1367.47%2c567.705%2c1416.743%2c569.053' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M132.724%2c442.198C150.941%2c442.39%2c166.682%2c429.581%2c174.677%2c413.211C181.808%2c398.609%2c177.415%2c381.944%2c168.915%2c368.094C160.877%2c354.997%2c148.09%2c345.032%2c132.724%2c344.85C117.062%2c344.665%2c103.071%2c353.785%2c95.019%2c367.22C86.716%2c381.073%2c85.016%2c397.915%2c92.272%2c412.344C100.342%2c428.391%2c114.763%2c442.009%2c132.724%2c442.198' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1016.419%2c286.605C1059.146%2c285.297%2c1104.866%2c277.407%2c1126.96%2c240.812C1149.636%2c203.254%2c1139.754%2c156.444%2c1118.011%2c118.338C1096.04%2c79.831%2c1060.726%2c45.525%2c1016.419%2c47.078C973.912%2c48.568%2c948.656%2c88.771%2c926.456%2c125.051C902.728%2c163.829%2c871.382%2c208.24%2c893.5%2c247.959C915.896%2c288.178%2c970.407%2c288.014%2c1016.419%2c286.605' fill='rgba(0%2c 0%2c 0%2c 0.24)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1109'%3e%3crect width='1440' height='631' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
 }
 
-
-
 #sign-background {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -287,8 +311,6 @@ body {
     background-color: #fffefe;
     box-shadow: 0 0 20px 7px rgba(0, 0, 0, .1);
 }
-
-
 
 .login-register-body .navbar .container .navbar-brand img {
     width: 200px;
@@ -362,6 +384,10 @@ body {
     margin-left: 1.5rem;
 }
 
+#form-show-password label {
+    margin-left: 1.5rem;
+}
+
 #gender-group{
 margin-top: 2%;
 }
@@ -383,6 +409,10 @@ margin-top: 5%;
     visibility: hidden;
 }
 
+#close-modal {
+    visibility: hidden;
+}
+
 .form-group .container.check {
     margin-left: 6px;
 }
@@ -393,7 +423,138 @@ margin-top: 5%;
 
 #registerModal .modal-footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.modal-footer .change-modal {
+    margin-bottom: 1rem;
+}
+
+.modal-box{ font-family: 'Raleway', sans-serif; }
+.modal-box .show-modal{
+    color: #fff;
+    background: linear-gradient(45deg, #41e07e, #7ad65c);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    margin: 80px auto 0;
+    border: none;
+    outline: none;
+    border-radius: 50px 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
+.modal-box .show-modal:hover,
+.modal-box .show-modal:focus{
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    outline: none;
+}
+
+.modal-backdrop.in{ opacity: 0; }
+.modal-box .modal-dialog{
+    width: 400px;
+    margin: 70px auto 0;
+}
+
+.modal.in .modal-dialog{ transform: scale(1); }
+.modal-box .modal-dialog .modal-content{
+    color: #41e07e;
+    text-align: center;
+    border: none;
+    box-shadow: 0 5px 15px 5px rgba(122,214,92,0.3);
+}
+
+.modal-box .modal-dialog .modal-content .close{
+    color: #e7e7e7;
+    font-size: 35px;
+    font-weight: 600;
+    text-shadow: none;
+    line-height: 12px;
+    height: 17px;
+    width: 17px;
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    left: auto;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.modal-box .modal-dialog .modal-content .close:hover{ color: #999; }
+.modal-box .modal-dialog .modal-content .close:focus{ outline: none; }
+.modal-box .modal-dialog .modal-content .modal-body{ padding: 40px 15px 30px !important; }
+.modal-box .modal-dialog .modal-content .modal-body .icon{
+    color: #fff;
+    background: linear-gradient(45deg, #41e07e, #7ad65c);
+    font-size: 100px;
+    line-height: 170px;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 55px;
+    box-shadow: 0 0 0 7px #fff,
+    0 0 0 15px rgba(65, 224, 126, 0.4),
+    0 0 0 22px #fff,
+    0 0 0 25px rgba(65, 224, 126, 0.15);
+    border-radius: 50%;
+}
+
+.modal-box .modal-dialog .modal-content .modal-body .title{
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+.modal-box .modal-dialog .modal-content .modal-body .description{
+    font-size: 18px;
+    letter-spacing: 1px;;
+    margin: 0 auto 25px;
+}
+
+.modal-box .modal-dialog .modal-content .modal-body .btn{
+    color: #fff;
+    background: linear-gradient(45deg, #41e07e, #7ad65c);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 80%;
+    padding: 10px 7px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+
+.modal-box .modal-dialog .modal-content .modal-body .btn:hover{
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px rgba(0,0,0,0.1),-5px -5px rgba(0,0,0,0.1);
+}
+
+.modal-box .modal-dialog .modal-content .modal-body .btn:focus{ outline: none; }
+
+#SuccessModal {padding-right: 0;}
+
+#modal-content {
+    color: #dc3545;
+    box-shadow: 0 5px 15px 5px #762424;
+}
+
+#icon {
+    background: linear-gradient(45deg, #bb303d, #ff0000);;
+    box-shadow: 0 0 0 7px #fff,
+    0 0 0 15px rgba(224, 65, 65, 0.4),
+    0 0 0 22px #fff,
+    0 0 0 25px rgba(224, 65, 65, 0.15);
+}
+
+#modalBtn {
+    background: linear-gradient(45deg, #bb303d, #ff0000);
 }
 
 
@@ -534,14 +695,6 @@ margin-top: 5%;
 
     .modal.fade .modal-dialog{ transform: scale(0.9); }
 
-    #registerModal .modal-footer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .modal-footer .change-modal {
-        margin-bottom: 1rem;
-    }
 }
 
 @media (max-width: 446px) {

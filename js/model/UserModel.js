@@ -9,5 +9,6 @@ export default class UserModel {
         this.achieves = ""
         this.inventory = ""
         this.spintime = ""
+        this.money = "0";
     }
 }

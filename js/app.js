@@ -1,4 +1,6 @@
-import RegisterView from './view/RegisterView.js'
+
+import UserView from './view/IndexView.js'
+import AdminView from './view/adminView.js'
 
 class App {
     constructor() {
@@ -8,10 +10,10 @@ class App {
                 
             ],
             'index': [
-                
+                UserView
             ],
-            'register': [
-                RegisterView
+            'admin': [
+                AdminView
             ],
             'newBand': [
                 
@@ -77,31 +79,35 @@ class App {
         //     }
         // ];
 
-        const users = [
+        const admin = [
             {
                 email : 'admin@esmad.ipp.pt',
                 password : 'Admin123',
                 username : 'Admin',
                 gender  : 'male',
                 age : '2000/06/13',
-                exp : '2562',
+                exp : '0',
                 achieves : '1,2,3,4,5',
                 inventory : '1,2,3,4,5,6',
-                spintime : ''
+                spintime : '',
+                money : '0'
             }
         ];
 
 
         if (localStorage.getItem('users')) {
-            const loginDeets = JSON.parse(localStorage.getItem('users'))
-            if(users.some(user => user.email === 'admin@esmad.ipp.pt')){
+
+            const users = JSON.parse(localStorage.getItem('users'))
+
+
+            if(!users.some(user => user.email === 'admin@esmad.ipp.pt')){
                 console.log("hey")
-                localStorage.setItem('users', JSON.stringify(users));
+                users.push('users', JSON.stringify(admin));
             }
         }
         else {
-            console.log("bye")
-            localStorage.setItem('users', JSON.stringify(users));
+    
+            localStorage.setItem('users', JSON.stringify(admin));
         }
 
     }
