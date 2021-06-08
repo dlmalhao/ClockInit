@@ -85,7 +85,7 @@ class App {
                 password : 'Admin123',
                 username : 'Admin',
                 gender  : 'male',
-                age : '2000/06/13',
+                age : '2000-06-13',
                 exp : '0',
                 achieves : '1,2,3,4,5',
                 inventory : '1,2,3,4,5,6',
@@ -103,6 +103,7 @@ class App {
             if(!users.some(user => user.email === 'admin@esmad.ipp.pt')){
                 console.log("hey")
                 users.push('users', JSON.stringify(admin));
+                localStorage.setItem('users', JSON.stringify(admin));
             }
         }
         else {

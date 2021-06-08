@@ -43,4 +43,14 @@ export default class UserController {
             return false
         }   
     }
+
+
+    removeUserBtn (username) {
+        let idx = this.users.findIndex(user => user.username === username)
+       this.users.splice(idx,1)
+       localStorage.removeItem("users")
+       localStorage.setItem("users", JSON.stringify(this.users))
+       console.log(this.users)
+    }
+       
 }
