@@ -90,7 +90,8 @@ class App {
                 achieves : '1,2,3,4,5',
                 inventory : '1,2,3,4,5,6',
                 spintime : '',
-                money : '0'
+                money : '0',
+                status : 'active'
             }
         ];
 

@@ -10,5 +10,6 @@ export default class UserModel {
         this.inventory = ""
         this.spintime = ""
         this.money = "0";
+        this.status = "active"
     }
 }

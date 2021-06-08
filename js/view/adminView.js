@@ -1,53 +1,153 @@
+import AdminController from '../controller/AdminUserController.js'
 import UserController from '../controller/UserController.js'
 
 export default class AdminView {
     constructor() {
 
+        this.adminController = new AdminController();
         this.userController = new UserController();
-        this.sendUser = document.querySelector("#send-user-to-index")
-        this.bindIsAdminLogged()
 
-        this.localStorageData()
-        this.removeUser()
+        this.sendUser = document.querySelector("#send-user-to-index")
+
+        this.bindIsAdminLogged();
+        this.localStorageData();
+        this.removeUser();
+        this.DisplayBlockBtn();
     }
+
+
+    // Script para só o admin conseguir aceder á pagina admin.html através do url
+
 
     bindIsAdminLogged() {
         this.adminButtonBackground = document.querySelector("#admin-btn-background")
-        if(!this.userController.isAdminLogged()) {
+        if (!this.userController.isAdminLogged()) {
             this.sendUser.click()
         }
     }
 
+
+    // Tabela de gestão de users
+
+
     localStorageData() {
         this.UsersTable = document.querySelector("#users-table")
-        for(let i = 0; i<this.userController.users.length; i++) {
+        for (let i = 0; i < this.adminController.users.length; i++) {
             this.UsersTable.innerHTML += `<tr>
             <th scope="row">${i}</th>
-            <td>${this.userController.users[i].email}</td>
-            <td>${this.userController.users[i].password}</td>
-            <td>${this.userController.users[i].username}</td>
-            <td>${this.userController.users[i].gender}</td>
-            <td>${this.userController.users[i].age}</td>
-            <td>${this.userController.users[i].exp}</td>
-            <td>${this.userController.users[i].achieves}</td>
-            <td>${this.userController.users[i].inventory}</td>
-            <td>${this.userController.users[i].spintime}</td>
-            <td>${this.userController.users[i].money}</td>
-            <td><button type="button" class="btn btn-danger removebtn" id='${this.userController.users[i].username}'>X</button></td>
-            <td><button type="button" class="btn btn-dark editbtn" id="EditUser">Editar</button></td>
+            <td>${this.adminController.users[i].email}</td>
+            <td>${this.adminController.users[i].password}</td>
+            <td>${this.adminController.users[i].username}</td>
+            <td>${this.adminController.users[i].gender}</td>
+            <td>${this.adminController.users[i].age}</td>
+            <td>${this.adminController.users[i].exp}</td>
+            <td>${this.adminController.users[i].achieves}</td>
+            <td>${this.adminController.users[i].inventory}</td>
+            <td>${this.adminController.users[i].spintime}</td>
+            <td>${this.adminController.users[i].money}</td>
+            <td><button type="button" class="btn btn-danger removebtn" id='${this.adminController.users[i].username}'>X</button></td>
+            <td><button type="button" class="btn btn-dark blockbtn" id="${this.adminController.users[i].username}2">Block</button></td>
           </tr>`
         }
     }
 
 
-    removeUser () {
+    removeUser() {
         this.removeButtons = document.querySelectorAll(".removebtn")
-        let controller = this.userController
+
+        let controller = this.adminController
+
         for (let button of this.removeButtons) {
-            button.addEventListener('click', function(){
-                controller.removeUserBtn(button.id)
-                window.location.reload()
-            })
+            if (button.id === "Admin") {
+                button.style.visibility = 'hidden'
+            }
+            else {
+                button.addEventListener('click', function () {
+                    controller.removeUserBtn(button.id)
+                    window.location.reload()
+                })
+            }
         }
     }
+
+
+    // blockUser() {
+    //     this.blockButtons = document.querySelectorAll(".blockbtn")
+
+    //     let controller = this.adminController;
+
+    //     for (let button of this.blockButtons) {
+    //         if (button.id === "Admin2") {
+    //             button.style.visibility = "hidden";
+    //         }
+    //         else {
+    //             if (!this.adminController.isUserBlocked(button.id)) {
+    //                 // console.log(button.id)
+    //                 button.addEventListener('click', function () {
+    //                     controller.blockUserBtn(button.id)
+    //                 })
+    //             }
+    //             else {
+    //                 button.addEventListener('click', function () {
+    //                     controller.unblockUserBtn(button.id)
+    //                 })
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
+
+    blockuser() {
+        let controller = this.adminController;
+        for (let button of this.blockButtons) {
+            if(button.innerHTML === 'Unblock') {
+                button.addEventListener('click', function() {
+                    controller.unblockUserBtn(button.id)
+                    location.reload()
+                })
+            }
+            else if (button.innerHTML === 'Block') {
+                button.addEventListener('click', function () {
+                    controller.blockUserBtn(button.id)
+                    location.reload()
+                })
+            }
+        }
+    }   
+
+
+
+    DisplayBlockBtn() {
+        this.blockButtons = document.querySelectorAll(".blockbtn")
+        let controller = this.adminController;
+
+        for (let button of this.blockButtons) {
+            if (button.id === "Admin2") {
+                button.style.visibility = "hidden";
+            }
+            if (controller.isUserBlocked(button.id)) {
+                button.innerHTML = 'Unblock'
+            }
+            if(!controller.isUserBlocked(button.id)) {
+                button.innerHTML = 'Block'
+            }
+        }
+        this.blockuser()
+    }    
+
+
+
+    // unblockUser() {
+    //     let controller = this.adminController;
+    //     this.blockButtons = document.querySelectorAll(".blockbtn")
+    //     for (let button of this.blockButtons) {
+    //         if(this.adminController.isUserBlocked(button.id)) {
+    //             button.addEventListener('click', function() {
+    //                 controller.unblockUserBtn(button.id)
+    //             })
+    //         }
+    //     }
+    // }    
 }
