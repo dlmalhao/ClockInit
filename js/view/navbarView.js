@@ -12,10 +12,12 @@ export default class NavView {
         this.loggoutTrigger = document.querySelector("#logout-trigger");
         this.activitiesNavlink = document.querySelector("#activities-navlink");
         this.NavNameOfUser = document.querySelector("#nav-name-of-user");
+        
 
         this.loggedUser = sessionStorage.getItem("loggedUser");
         this.bindLogout()
         this.updateStatusUI()
+        // this.bindIsAnyUserLogged ()
         
 
     

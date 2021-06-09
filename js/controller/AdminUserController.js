@@ -3,6 +3,7 @@
 export default class AdminController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.categories = localStorage.categories ? JSON.parse(localStorage.categories) : [];
     }
 
 
@@ -12,6 +13,14 @@ export default class AdminController {
        this.users.splice(idx,1)
        localStorage.removeItem("users")
        localStorage.setItem("users", JSON.stringify(this.users))
+    }
+
+    removeCategoryBtn (id) {
+        let idx = this.categories.findIndex(category => category.id === id)
+
+        this.categories.splice(idx,1)
+        localStorage.removeItem("categories")
+        localStorage.setItem("categories", JSON.stringify(this.categories))
     }
        
 

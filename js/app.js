@@ -17,8 +17,7 @@ class App {
                 NavView
             ],
             'admin': [
-                AdminView,
-                NavView
+                AdminView
             ],
             'categories': [
                 CategoriesView,

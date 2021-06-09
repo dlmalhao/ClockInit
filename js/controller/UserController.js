@@ -18,10 +18,15 @@ export default class UserController {
         // if(this.users.some(user => user.status === "blocked" )) {
         //     throw Error('You are blocked by an Admin')
         //}
-        if (this.users.some(user => user.username === username && user.password === password)) {
-            sessionStorage.setItem('loggedUser', username)
-        } else {
-            throw Error('Invalid login!');
+        if (this.users.some(user => user.status === "blocked" && user.username === username && user.password === password)) {
+            throw Error ('You are blocked by an Admin!')
+        }
+        else {
+            if (this.users.some(user => user.username === username && user.password === password)) {
+                sessionStorage.setItem('loggedUser', username)
+            } else {
+                throw Error('Invalid login!');
+            }
         }
     }
 
@@ -45,5 +50,14 @@ export default class UserController {
         else {
             return false
         }   
+    }
+
+    isAnyUserLogged () {
+        if(sessionStorage.getItem('loggedUser')) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }

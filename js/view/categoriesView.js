@@ -1,12 +1,16 @@
 import CategoriesController from '../controller/CategoriesController.js'
+import UserController from '../controller/UserController.js'
 
 export default class CategoriesView {
     constructor() {
 
 
         this.categoriesController = new CategoriesController();
+        this.userController = new UserController();
         this.CategoriesRow = document.querySelector("#categories-row")
+        this.sendUser = document.querySelector("#send-user-to-index")
         this.localStorageData()
+        this.bindIsAnyUserLogged ()
         
     }
 
@@ -24,6 +28,15 @@ export default class CategoriesView {
             </div>`
         }
     }
+
+
+    bindIsAnyUserLogged () {
+        if(!this.userController.isAnyUserLogged()) {
+            this.sendUser.click()
+        }
+    }
+
+
 }
 
         // this.userController = new UserController();

@@ -13,6 +13,7 @@ export default class AdminView {
         this.localStorageData();
         this.removeUser();
         this.DisplayBlockBtn();
+        this.removeCategory()
     }
 
 
@@ -32,6 +33,7 @@ export default class AdminView {
 
     localStorageData() {
         this.UsersTable = document.querySelector("#users-table")
+        this.CategoriesTable = document.querySelector("#categories-table")
         for (let i = 0; i < this.adminController.users.length; i++) {
             this.UsersTable.innerHTML += `<tr>
             <th scope="row">${i}</th>
@@ -49,6 +51,19 @@ export default class AdminView {
             <td><button type="button" class="btn btn-dark blockbtn" id="${this.adminController.users[i].username}2">Block</button></td>
           </tr>`
         }
+
+
+        for (let i = 0; i < this.adminController.categories.length; i++) {
+            this.CategoriesTable.innerHTML += `<tr>
+            <th scope="row">${i}</th>
+            <td>${this.adminController.categories[i].id}</td>
+            <td>${this.adminController.categories[i].name}</td>
+            <td><img src="${this.adminController.categories[i].image}" style ="width: 5rem; height: 5rem;"></td>
+            <td>${this.adminController.categories[i].color}</td>
+            <td><button type="button" class="btn btn-danger removecategory" id='${this.adminController.categories[i].id}'>X</button></td>
+          </tr>`
+        }
+
     }
 
 
@@ -69,6 +84,22 @@ export default class AdminView {
             }
         }
     }
+
+    removeCategory () {
+        this.RemovecategoryButton = document.querySelectorAll(".removecategory")
+
+        let controller = this.adminController
+
+        for (let button of this.RemovecategoryButton) {
+            button.addEventListener('click', function () {
+                controller.removeCategoryBtn(button.id)
+                window.location.reload()
+            })
+        }
+    }
+    
+
+
 
 
     // blockUser() {

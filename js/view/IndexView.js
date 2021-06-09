@@ -42,6 +42,7 @@ export default class UserView {
         this.NavNameOfUser = document.querySelector("#nav-name-of-user")
 
         this.loggedUser = sessionStorage.getItem("loggedUser");
+
         
         this.updateStatusUI()
         this.bindIsAdminLogged()
@@ -152,6 +153,8 @@ export default class UserView {
             // this.NameOfUser.innerHTML = this.loggedUser
             this.NameOfUser2.innerHTML = this.loggedUser
             this.StartButton.innerHTML = "Get Started"
+
+            
 
             
          } //else {
