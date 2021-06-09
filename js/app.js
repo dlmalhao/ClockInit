@@ -1,22 +1,28 @@
 
 import UserView from './view/IndexView.js'
 import AdminView from './view/adminView.js'
+import NavView from './view/navbarView.js'
+import CategoriesView from './view/categoriesView.js';
 
 class App {
     constructor() {
         // Mapeamento entre os ficheiros HTML e as views que estes vão carregar
         this.routes = {
             '': [
-                UserView
+                UserView,
+                NavView
             ],
             'index': [
-                UserView
+                UserView,
+                NavView
             ],
             'admin': [
-                AdminView
+                AdminView,
+                NavView
             ],
-            'newBand': [
-                
+            'categories': [
+                CategoriesView,
+                NavView
             ]
         };
 
@@ -44,40 +50,32 @@ class App {
     }
 
     #importDataFixtures() {
-        // const bands = [
-        //     {
-        //         id: 1,
-        //         name: 'Muse',
-        //         genre: 'Pop-Rock',
-        //         photo: 'http://www.planckmachine.com/wp-content/uploads/2016/09/hysteria-muse-meaning-song.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=AR6A3dap6MI'
-        //     },
-        //     {
-        //         id: 2,
-        //         name: 'RadioHead',
-        //         genre: 'Pop-Rock',
-        //         photo: 'https://ep01.epimg.net/elpais/imagenes/2017/05/17/icon/1495017818_647155_1495125183_noticia_normal.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=fHiGbolFFGw'
-        //     },
-        //     {
-        //         id: 3,
-        //         name: 'James',
-        //         genre: 'Pop-Rock',
-        //         photo: 'http://ksassets.timeincuk.net/wp/uploads/sites/55/2013/01/2012JamesBandPress181212-2.jpg',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=BlucfrfxAUc'
-        //     },
-        //     {
-        //         id: 4,
-        //         name: 'Metallica',
-        //         genre: 'Metal',
-        //         photo: 'https://images.impresa.pt/blitz/2016-08-19-metallica.jpg/original/mw-860',
-        //         description: 'The best band ever',
-        //         video: 'https://www.youtube.com/watch?v=pZTJBViOoik'
-        //     }
-        // ];
+        const categories = [
+            {
+                id: 1,
+                name: 'Cooking', 
+                image: '../img/Cooking.svg',
+                color: '#C79BE3'
+            },
+            {
+                id: 2,
+                name: 'Music', 
+                image: '../img/Music.svg',
+                color: '#505A8D'
+            },
+            {
+                id: 3,
+                name: 'Literature', 
+                image: '../img/Literature.svg',
+                color: '#78D1AD'
+            },
+            {
+                id: 4,
+                name: 'Fit', 
+                image: '../img/Fit.svg',
+                color: '#FFF9A4'
+            }
+        ];
 
         const admin = [
             {
@@ -102,7 +100,6 @@ class App {
 
 
             if(!users.some(user => user.email === 'admin@esmad.ipp.pt')){
-                console.log("hey")
                 users.push('users', JSON.stringify(admin));
                 localStorage.setItem('users', JSON.stringify(admin));
             }
@@ -112,6 +109,11 @@ class App {
             localStorage.setItem('users', JSON.stringify(admin));
         }
 
+
+
+        if (!localStorage.categories) {
+            localStorage.setItem('categories', JSON.stringify(categories));
+        }
     }
 }
 

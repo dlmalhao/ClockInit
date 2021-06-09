@@ -16,15 +16,19 @@ export default class AdminController {
        
 
     blockUserBtn (user2) {
+        console.log("user2 " + user2)
         let idx = this.users.findIndex(user => user.username + "2" === user2)
         this.users[idx].status = "blocked"
+        console.log("index " + idx)
         localStorage.removeItem("users")
         localStorage.setItem("users", JSON.stringify(this.users))
     }
 
 
     unblockUserBtn (user2) {
+        console.log("user2 " + user2)
         let idx = this.users.findIndex(user => user.username + "2" === user2)
+        console.log("index " + idx)
         this.users[idx].status = "active"
         localStorage.removeItem("users")
         localStorage.setItem("users", JSON.stringify(this.users))
@@ -41,9 +45,4 @@ export default class AdminController {
             return false
         }
     }
-
-
-    
-
-
 }

@@ -42,12 +42,8 @@ export default class UserView {
         this.NavNameOfUser = document.querySelector("#nav-name-of-user")
 
         this.loggedUser = sessionStorage.getItem("loggedUser");
-
-        this.bindLogout()
-
         
         this.updateStatusUI()
-
         this.bindIsAdminLogged()
     }
 
@@ -115,7 +111,7 @@ export default class UserView {
                     location.reload()
                 })
 
-                 
+                
             } catch (e) {
                 let error = String(e).substring(7)
                 document.getElementById("error-content").innerHTML = error;
@@ -148,38 +144,23 @@ export default class UserView {
 
     updateStatusUI() {
         if (this.userController.isLogged()) {
-            this.SignInButton.style.display = "none"
+            // this.SignInButton.style.display = "none"
 
             this.textHeader.innerHTML = "Welcome <span id='name-of-user2' style = 'color: #FF725E;'></span> ! We hope you are getting a great time with our services! Haven't you taken a look on our activities yet ?"
             this.textContent.innerHTML = "Explore what our website has to offer. Have fun with ClockInit !"
             this.NameOfUser2 = document.querySelector('#name-of-user2');
-            this.NameOfUser.innerHTML = this.loggedUser
+            // this.NameOfUser.innerHTML = this.loggedUser
             this.NameOfUser2.innerHTML = this.loggedUser
             this.StartButton.innerHTML = "Get Started"
 
             
-        } else {
-            this.logoutButton.style.display = 'none'
-            this.storeButton.style.display = 'none'
-            this.NameOfUser.style.display = 'none'
-            this.NavNameOfUser.style.display = 'none'
-        }
+         } //else {
+        //     this.logoutButton.style.display = 'none'
+        //     this.storeButton.style.display = 'none'
+        //     this.NameOfUser.style.display = 'none'
+        //     this.NavNameOfUser.style.display = 'none'
+        // }
     }
-
-
-
-
-    bindLogout() {
-        setTimeout(() => {  
-            this.loggoutTrigger.addEventListener('click', () => { 
-                this.userController.logout(); }, 1000);
-        // this.loggoutTrigger.addEventListener('click', () => {
-        //     this.userController.logout();
-
-        })
-    }
-
-
 
 
     bindIsAdminLogged() {
@@ -188,7 +169,7 @@ export default class UserView {
             this.adminButtonBackground.style.display = 'none'
         }
     }
-    
-    
+
+
 }
 
