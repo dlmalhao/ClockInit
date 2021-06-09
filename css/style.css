@@ -568,6 +568,10 @@ margin-top: 5%;
 
 
 
+
+
+
+
 .categories {
     background-color: #D1EBEC;
 }
@@ -614,10 +618,22 @@ margin-top: 5%;
     justify-content: center;
 }
 
+.categories .row {
+    margin-top: 3rem;
+}
 
+.categories .row img {
+    width: 100%;
+}
 
+.categories .row .profile-buttons {
+    margin-top: 4rem;
+}
 
-
+.categories .row .profile-buttons button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
 
 

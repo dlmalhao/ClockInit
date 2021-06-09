@@ -15,9 +15,7 @@ export default class UserController {
     }
 
     login(username, password) {
-        // if(this.users.some(user => user.status === "blocked" )) {
-        //     throw Error('You are blocked by an Admin')
-        //}
+
         if (this.users.some(user => user.status === "blocked" && user.username === username && user.password === password)) {
             throw Error ('You are blocked by an Admin!')
         }
