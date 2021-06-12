@@ -218,7 +218,7 @@ export default class AdminView {
 
                             document.querySelector("#yesButton").addEventListener("click", () => {
                                 this.adminController.demoteAdminToUser(this.userBeeingPromoted.value)
-                                location.reload()
+                                setTimeout(function(){ location.reload() }, 1000);
                             })
                         }
                         else {
