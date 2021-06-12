@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsiva">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item" id="activities-navlink"><a href="" class="nav-link active">Activities</a></li>
+                    <li class="nav-item" id="activities-navlink"><a href="./categories.html" class="nav-link">Activities</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contacts</a></li>
                     <li class="nav-item" id="store-btn"><a href="" class="nav-link">Store</a></li>
-                    <li class="nav-item" id="nav-name-of-user"><a href="#" class="nav-link" id="name-of-user"></a></li>
+                    <li class="nav-item" id="nav-name-of-user"><a href="#" class="nav-link active" id="name-of-user"></a></li>
                     <li class="nav-item" id="logout-btn"><a href="" class="nav-link" id="logout-trigger">Log out</a></li>
                     <li class="nav-item" id="signinButton"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
                 </ul>
@@ -39,12 +39,12 @@
         </div>
     </nav>
 
-    
+
 
     <div class="row">
          <div class="col-lg-1"></div>
          <div class="col-lg-3">
-             <img src="../img/avatarperfil.png" alt="">
+             <img id="profilePic" src="../img/avatarperfil.png" alt="">
              <div class="profile-buttons">
                  <button type="button" class="btn btn-dark">Favorites</button>
                  <button type="button" class="btn btn-dark">Inventory</button>
@@ -71,6 +71,11 @@
                      <label for="profileBirth">Date of birth</label>
                      <input type="text" class="form-control" id="profileBirth" disabled>
                  </div>
+             </div>
+             <div class="editButtons">
+                 <button class="btn btn-dark" id="editProfile" >Edit</button>
+                 <button class="btn btn-success saveProfile" style="visibility: hidden;" id="" >Save</button>
+                 <button class="btn btn-danger cancelProfile" style="visibility: hidden; " id="" >Cancel</button>
              </div>
          </div>
          <div class="col-lg-1"></div>

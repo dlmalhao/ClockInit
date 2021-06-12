@@ -122,6 +122,11 @@ body {
     margin-top: 50px;
 }
 
+#startAnchor {
+    display: contents;
+    text-decoration: none;
+}
+
 
 
 /* Admin button */

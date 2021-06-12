@@ -31,7 +31,7 @@
                     <li class="nav-item" id="activities-navlink"><a href="./html/categories.html" class="nav-link">Activities</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contacts</a></li>
                     <li class="nav-item" id="store-btn"><a href="" class="nav-link">Store</a></li>
-                    <li class="nav-item" id="nav-name-of-user"><a href="#" class="nav-link" id="name-of-user"></a></li>
+                    <li class="nav-item" id="nav-name-of-user"><a href="html/profile.html" class="nav-link" id="name-of-user"></a></li>
                     <li class="nav-item" id="logout-btn"><a href="" class="nav-link" id="logout-trigger">Log out</a></li>
                     <li class="nav-item" id="signinButton"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
                 </ul>
@@ -58,9 +58,9 @@
                         <p id="coluna-direita-text">We offer several activities for free, however you need to register.
                         </p>
                     </div>
-                    <button type="button" class="btn btn-dark" id="start-btn" href="#loginModal" data-toggle="modal" data-target="#loginModal">Come have fun with us!</button>
+                    <a href="" id="startAnchor" data-toggle="modal" data-target="#loginModal"><button type="button" class="btn btn-dark" id="start-btn" >Come have fun with us!</button></a>
                 </div>
-            </div>
+            </div>           
         </div>
         <div class="container-fluid" id="mountains">
             <img src="./img/Flat-Mountains.svg" alt="">
@@ -73,8 +73,6 @@
         <div class="admin-btn-background" id="admin-btn-background">
             <a href="/html/admin.html"><button type="button" class="btn btn-dark" id="admin-btn">A</button></a>
         </div>
-    
-    
     </div>
 
 
@@ -103,8 +101,8 @@
                 <li data-target="#carousel" data-slide-to="2"></li>
                 <li data-target="#carousel" data-slide-to="3"></li>
             </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div class="carousel-inner" id="carouselInner">
+                <!-- <div class="carousel-item active">
                     <div class="background-card" id="fit">
                         <img src="./img/Fit.svg" class="card-img-top" alt="">
                         <div class="image__overlay image__overlay--primary">
@@ -113,12 +111,12 @@
                                 Exercise your mind and your body!
                             </p>
                             <div class="icon">
-                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal" class="carouselIcon"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
+                </div> -->
+                <!-- <div class="carousel-item">
                     <div class="background-card" id="cooking">
                         <img src="./img/Cooking.svg" class="card-img-top" alt="">
                         <div class="image__overlay image__overlay--primary">
@@ -127,7 +125,7 @@
                                 What about tasting new flavors?
                             </p>
                             <div class="icon">
-                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal" class="carouselIcon"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +139,7 @@
                                 When words fail, music speaks!
                             </p>
                             <div class="icon">
-                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal" class="carouselIcon"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
@@ -155,11 +153,11 @@
                                 Are you the master of literature?
                             </p>
                             <div class="icon">
-                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fas fa-info"></i></a>
+                                <a href="#loginModal" data-toggle="modal" data-target="#loginModal" class="carouselIcon"><i class="fas fa-info"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -206,9 +204,9 @@
                                         <a href="" id="register-modal-toggle" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">I don't have an account</a>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-dark">Login</button>
+                                <div class="modal-footer d-flex justify-content-center align-items-center">
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success">Login</button>
                                 </div>
                             </form>
                         </div>
@@ -286,8 +284,8 @@
                                         <a href="" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">I already have an account!</a>
                                     </div>
                                     <div class="buttons-modal">
-                                        <button type="submit" class="btn btn-dark">Register</button>
                                         <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Register</button>
                                     </div>
                                     <button type="button" id="trigger-modal" data-toggle="modal" data-target="#SuccessModal"></button>
                                     <button type="button" id="close-modal" data-dismiss="modal"></button>

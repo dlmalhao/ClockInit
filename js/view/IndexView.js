@@ -1,9 +1,11 @@
 import UserController from '../controller/UserController.js'
+import CategoriesController from '../controller/CategoriesController.js'
 
 export default class UserView {
     constructor() {
 
         this.userController = new UserController();
+        this.categoriesController = new CategoriesController()
 
 
         // Register Form
@@ -37,15 +39,22 @@ export default class UserView {
         this.textContent = document.querySelector("#coluna-direita-text");
         this.SignInButton = document.querySelector("#signinButton");
         this.StartButton = document.querySelector("#start-btn")
+        this.StartAnchor = document.querySelector("#startAnchor")
+        this.CarouselIcons = document.querySelectorAll(".carouselIcon")
         this.loggoutTrigger = document.querySelector("#logout-trigger")
         this.activitiesNavlink = document.querySelector("#activities-navlink")
         this.NavNameOfUser = document.querySelector("#nav-name-of-user")
-
         this.loggedUser = sessionStorage.getItem("loggedUser");
+
+
+        //Carousel
+        
+        this.CarouselInner = document.querySelector('#carouselInner')
 
         
         this.updateStatusUI()
         this.bindIsAdminLogged()
+        this.CategoriesDataInputToCarousel ()
     }
 
 
@@ -153,10 +162,12 @@ export default class UserView {
             // this.NameOfUser.innerHTML = this.loggedUser
             this.NameOfUser2.innerHTML = this.loggedUser
             this.StartButton.innerHTML = "Get Started"
-
+            this.StartAnchor.setAttribute("href","./html/categories.html")
+            this.StartAnchor.setAttribute("data-toggle","")
+            this.StartAnchor.setAttribute("data-target","")
+            
             
 
-            
          } //else {
         //     this.logoutButton.style.display = 'none'
         //     this.storeButton.style.display = 'none'
@@ -174,5 +185,29 @@ export default class UserView {
     }
 
 
+
+
+
+    CategoriesDataInputToCarousel () {
+        for (let i = 0; i < this.categoriesController.categories.length; i++){
+            let x = i==0 ? `<div class="carousel-item active">`:`<div class="carousel-item">`
+            let y = this.userController.isLogged() == true ? `<a href="./html/categories.html" class="carouselIcon"><i class="fas fa-info"></i></a>` : `<a href="#loginModal" data-toggle="modal" data-target="#loginModal" class="carouselIcon"><i class="fas fa-info"></i></a>`
+            this.CarouselInner.innerHTML += 
+                `${x}
+                    <div class="background-card" style="background-color: ${this.categoriesController.categories[i].color};">
+                        <img src="${this.categoriesController.categories[i].image}" class="card-img-top" alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">${this.categoriesController.categories[i].name}</div>
+                            <p class="image__description">
+                            ${this.categoriesController.categories[i].text}
+                            </p>
+                            <div class="icon">
+                                ${y}
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+        }
+    }
 }
 

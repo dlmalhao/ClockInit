@@ -1,4 +1,4 @@
-import AdminController from '../controller/AdminUserController.js'
+import AdminController from '../controller/AdminController.js'
 import UserController from '../controller/UserController.js'
 
 export default class AdminView {
@@ -14,12 +14,12 @@ export default class AdminView {
         this.removeUser();
         this.DisplayBlockBtn();
         this.removeCategory()
+        this.AdminManagement()
     }
 
 
-    // Script para só o admin conseguir aceder á pagina admin.html através do url
-
-
+    // Função para só o admin conseguir aceder á pagina admin.html através do url. Se não estiver ninguem
+    //logado ou se não for Admin, automaticamente redireciona para a página principal
     bindIsAdminLogged() {
         this.adminButtonBackground = document.querySelector("#admin-btn-background")
         if (!this.userController.isAdminLogged()) {
@@ -28,9 +28,8 @@ export default class AdminView {
     }
 
 
+
     // Tabela de gestão de users
-
-
     localStorageData() {
         this.UsersTable = document.querySelector("#users-table")
         this.CategoriesTable = document.querySelector("#categories-table")
@@ -41,6 +40,7 @@ export default class AdminView {
             <td>${this.adminController.users[i].password}</td>
             <td>${this.adminController.users[i].username}</td>
             <td>${this.adminController.users[i].gender}</td>
+            <td>${this.adminController.users[i].role}</td>
             <td>${this.adminController.users[i].age}</td>
             <td>${this.adminController.users[i].exp}</td>
             <td>${this.adminController.users[i].achieves}</td>
@@ -67,13 +67,15 @@ export default class AdminView {
     }
 
 
+    // função que remove utilizadores
     removeUser() {
         this.removeButtons = document.querySelectorAll(".removebtn")
-
         let controller = this.adminController
 
         for (let button of this.removeButtons) {
-            if (button.id === "Admin") {
+            let UserRole = this.userController.getRoleOfUser(button.id)
+
+            if (UserRole === "admin") {
                 button.style.visibility = 'hidden'
             }
             else {
@@ -85,6 +87,8 @@ export default class AdminView {
         }
     }
 
+
+    // função que remove categorias
     removeCategory () {
         this.RemovecategoryButton = document.querySelectorAll(".removecategory")
 
@@ -100,36 +104,7 @@ export default class AdminView {
     
 
 
-
-
-    // blockUser() {
-    //     this.blockButtons = document.querySelectorAll(".blockbtn")
-
-    //     let controller = this.adminController;
-
-    //     for (let button of this.blockButtons) {
-    //         if (button.id === "Admin2") {
-    //             button.style.visibility = "hidden";
-    //         }
-    //         else {
-    //             if (!this.adminController.isUserBlocked(button.id)) {
-    //                 // console.log(button.id)
-    //                 button.addEventListener('click', function () {
-    //                     controller.blockUserBtn(button.id)
-    //                 })
-    //             }
-    //             else {
-    //                 button.addEventListener('click', function () {
-    //                     controller.unblockUserBtn(button.id)
-    //                 })
-    //             }
-    //         }
-    //     }
-    // }
-
-
-
-
+    // função que bloqueia utilizadores
     blockuser() {
         let controller = this.adminController;
         for (let button of this.blockButtons) {
@@ -150,12 +125,16 @@ export default class AdminView {
 
 
 
+
+    // função reponsável pelo texto do botão de bloquear
     DisplayBlockBtn() {
         this.blockButtons = document.querySelectorAll(".blockbtn")
         let controller = this.adminController;
 
         for (let button of this.blockButtons) {
-            if (button.id === "Admin2") {
+            let username = (button.id).slice(0,-1)
+            let UserRole = this.userController.getRoleOfUser(username)
+            if (UserRole === "admin") {
                 button.style.visibility = "hidden";
             }
             if (controller.isUserBlocked(button.id)) {
@@ -166,19 +145,94 @@ export default class AdminView {
             }
         }
         this.blockuser()
-    }    
+    }       
 
 
 
-    // unblockUser() {
-    //     let controller = this.adminController;
-    //     this.blockButtons = document.querySelectorAll(".blockbtn")
-    //     for (let button of this.blockButtons) {
-    //         if(this.adminController.isUserBlocked(button.id)) {
-    //             button.addEventListener('click', function() {
-    //                 controller.unblockUserBtn(button.id)
-    //             })
-    //         }
-    //     }
-    // }    
+
+    AdminManagement() {
+        this.Add = document.querySelector("#addAdminButton")
+        this.Remove = document.querySelector("#removeAdminButton")
+        this.AdminModalTrigger = document.querySelector("#AdminModalTrigger")
+        this.AdminManagementModal = document.querySelector("#adminManagementModal")
+        this.userBeeingPromoted = document.querySelector("#futureAdminUsername")
+
+
+        //Adicionar
+
+        this.Add.addEventListener("click", () => {
+            document.querySelector("#textOfAdminModal").innerHTML = `Who do you want to promote to Admin ?`
+            this.AdminModalTrigger.click()
+
+            document.querySelector("#confirmButton").addEventListener("click", () => {
+                if(this.userBeeingPromoted.value == ""){
+                    document.querySelector("#error-content").innerHTML = `Invalid format`
+                    document.querySelector("#ErrorModalTrigger").click()
+                }
+                else {
+
+                    if(this.adminController.isUsernameRegisted(this.userBeeingPromoted.value)) {
+                        if(!this.adminController.isAdmin(this.userBeeingPromoted.value)) {
+                            document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to promote ${this.userBeeingPromoted.value} to Admin ?`
+                            document.getElementById("close-modal-2").click()
+                            document.querySelector("#ConfirmationModalTrigger").click()
+
+                            document.querySelector("#yesButton").addEventListener("click", () => {
+                                this.adminController.promoteUserToAdmin(this.userBeeingPromoted.value)
+                                setTimeout(function(){ location.reload() }, 1000);
+                            })
+                        }
+                        else {
+                            document.querySelector("#error-content").innerHTML = `User is already an Admin`
+                            document.querySelector("#ErrorModalTrigger").click()
+                            return
+                        }
+                    }
+                    else {
+                        document.querySelector("#error-content").innerHTML = `User is not registed`
+                        document.querySelector("#ErrorModalTrigger").click()
+                    }
+                }
+            })
+        })
+        
+        //Remover
+
+        this.Remove.addEventListener("click", () => {
+            document.querySelector("#textOfAdminModal").innerHTML = `Who do you want to demote to User ?`
+            this.AdminModalTrigger.click()
+        
+
+            document.querySelector("#confirmButton").addEventListener("click", () => {
+                if(this.userBeeingPromoted.value == ""){
+                    document.querySelector("#error-content").innerHTML = `Invalid format`
+                    document.querySelector("#ErrorModalTrigger").click()
+                }
+                else{
+
+                    if(this.adminController.isUsernameRegisted(this.userBeeingPromoted.value)) {
+                        if(!this.adminController.isUser(this.userBeeingPromoted.value)) {
+                            document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to demote ${this.userBeeingPromoted.value} to User ?`
+                            document.getElementById("close-modal-2").click()
+                            document.querySelector("#ConfirmationModalTrigger").click()
+
+                            document.querySelector("#yesButton").addEventListener("click", () => {
+                                this.adminController.demoteAdminToUser(this.userBeeingPromoted.value)
+                                location.reload()
+                            })
+                        }
+                        else {
+                            document.querySelector("#error-content").innerHTML = `User is already an User`
+                            document.querySelector("#ErrorModalTrigger").click()
+                            return
+                        }
+                    }
+                    else {
+                        document.querySelector("#error-content").innerHTML = `User is not registed`
+                        document.querySelector("#ErrorModalTrigger").click()
+                    }
+                }
+            })
+        })
+    } 
 }

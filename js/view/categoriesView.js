@@ -9,13 +9,14 @@ export default class CategoriesView {
         this.userController = new UserController();
         this.CategoriesRow = document.querySelector("#categories-row")
         this.sendUser = document.querySelector("#send-user-to-index")
-        this.localStorageData()
+        this.CategoriesDataInput()
         this.bindIsAnyUserLogged ()
         
     }
 
 
-    localStorageData () {
+    // 
+    CategoriesDataInput () {
         for (let i = 0; i < this.categoriesController.categories.length; i++){
             this.CategoriesRow.innerHTML += 
             `<div class="col-md-4 d-flex justify-center flex-column mb-2">
