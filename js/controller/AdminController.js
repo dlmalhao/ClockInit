@@ -1,4 +1,4 @@
-
+import CategoriesModel from "../model/CategoriesModel.js";
 
 export default class AdminController {
     constructor() {
@@ -111,5 +111,29 @@ export default class AdminController {
         else {
             return false
         }
+    }
+
+
+
+    // Função que verifica se uma categoria já existe
+    categoryExists(cat) {
+        for (let category of this.categories) {
+            if(category.name == cat) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    }
+
+
+
+    // Funcão que adiciona uma nova categoria á local storage
+    bindAddCategory(name, text, image, color){
+        let lastCategory = this.categories[this.categories.length - 1]
+        let newCategoryId = parseInt(lastCategory.id) + 1
+        this.categories.push(new CategoriesModel(newCategoryId, name, text, image, color));
+            localStorage.setItem('categories', JSON.stringify(this.categories))
     }
 }

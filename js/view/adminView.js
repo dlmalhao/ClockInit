@@ -15,6 +15,7 @@ export default class AdminView {
         this.DisplayBlockBtn();
         this.removeCategory()
         this.AdminManagement()
+        this.AddCategory()
     }
 
 
@@ -80,8 +81,12 @@ export default class AdminView {
             }
             else {
                 button.addEventListener('click', function () {
-                    controller.removeUserBtn(button.id)
-                    window.location.reload()
+                    document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to remove ${button.id}'s data?`
+                    document.querySelector("#ConfirmationModalTrigger").click()
+                    document.querySelector("#yesButton").addEventListener("click", () => {
+                        controller.removeUserBtn(button.id)
+                        window.location.reload()
+                    })
                 })
             }
         }
@@ -149,7 +154,7 @@ export default class AdminView {
 
 
 
-
+    // Função responsavel pela gestão de administradores
     AdminManagement() {
         this.Add = document.querySelector("#addAdminButton")
         this.Remove = document.querySelector("#removeAdminButton")
@@ -235,4 +240,45 @@ export default class AdminView {
             })
         })
     } 
+
+
+    //Função responsável pela adição de uma nova categoria
+    AddCategory (){
+        document.querySelector("#addbutton").addEventListener("click", () => {
+            document.querySelector("#textOfCategoryModal").innerHTML = `Which category do you want to add ?`
+            document.querySelector("#CategoryModalTrigger").click()
+
+            document.querySelector("#confirmButton2").addEventListener("click", () => {
+                this.categoryName = document.querySelector("#CategoryName")
+                this.categoryText = document.querySelector("#CategoryText")
+                this.categoryImage = document.querySelector("#CategoryImage")
+                this.categoryColor = document.querySelector("#CategoryColor")
+                if(this.categoryName.value == "" || this.categoryText.value == "" || this.categoryImage.value == "" || this.categoryColor.value == ""){
+                    document.querySelector("#error-content").innerHTML = `Invalid format`
+                    document.querySelector("#ErrorModalTrigger").click()
+                }
+                else {
+
+                    if(this.adminController.categoryExists(this.categoryName.value)) {
+                        document.querySelector("#error-content").innerHTML = `Category already exists`
+                        document.querySelector("#ErrorModalTrigger").click()
+                    }
+                    else {
+
+                        document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to add ${this.categoryName.value} to Categories ?`
+
+                        document.getElementById("close-modal-3").click()
+                        document.querySelector("#ConfirmationModalTrigger").click()
+                        document.querySelector("#yesButton").addEventListener("click", () => {
+                            this.adminController.bindAddCategory(this.categoryName.value, this.categoryText.value, this.categoryImage.value, this.categoryColor.value)
+                            setTimeout(function() { location.reload() },1000)
+                        })
+                    }
+                }
+            })
+        })
+    }
+
+
+
 }

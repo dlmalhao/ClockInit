@@ -13,12 +13,22 @@ export default class ProfileView {
         this.EditProfile = document.querySelector("#editProfile")
         this.CancelProfile = document.querySelector(".cancelProfile")
         this.SaveProfile = document.querySelector(".saveProfile")
+        this.changePassBtn = document.querySelector("#changePassbtn")
+        this.showPassword = document.querySelector('#show-password')
         
         
-        this.changeProfileInput()
-        this.bindIsAnyUserLogged()
-        this.editProfileInputs()
-        this.saveProfileInputs()
+
+   
+        
+        
+        // this.changeProfileInput()
+        // this.bindIsAnyUserLogged()
+        // this.editProfileInputs()
+        // this.saveProfileInputs()
+        // this.modalChangePassword()
+        // this.changePassword()
+        // this.showPass()
+        // this.changeRigthSide()
     }
 
 
@@ -38,7 +48,10 @@ export default class ProfileView {
             this.ProfileBirth.value = this.profileAge
 
             this.SaveProfile.id =idx
+            
+
         }
+        
     }
 
     bindIsAnyUserLogged () {
@@ -78,6 +91,81 @@ export default class ProfileView {
         })
     }
 
+    modalChangePassword(){
+        this.changePassBtn.addEventListener("click" , () =>{
+                document.querySelector("#changePasswordModal")
+            
+        })
+    }
+
+    changePassword(){
+        try{
+
+            this.SavePassword = document.querySelector("#savePassword")
+        
+            this.oldPass = this.userController.getOldPassword()
+            this.SavePassword.addEventListener("click", () =>{
+                this.OldPassInput = document.querySelector("#oldPassword").value
+                this.NewPass = document.querySelector("#newPassword").value
+                this.ConfirmNewPass = document.querySelector("#confirmNewPassword").value
+                if(this.oldPass == this.OldPassInput){
+                    if(this.NewPass == this.ConfirmNewPass){
+                        this.userController.setNewPassword(this.NewPass)
+                        let successModal = document.querySelector("#SuccessModal")
+                        successModal.addEventListener('click', function(){
+                        location.reload()
+                        })
+                    }
+                    else{
+                        throw Error("Password and Confirm Password are different!")
+
+                    }
+                }
+                else{
+                    throw Error("Your old Password is wrong!")
+                }
+
+            })
+        }
+        catch (e) {
+            let error = String(e).substring(7)
+            document.getElementById("error-content").innerHTML = error;
+            
+            document.getElementById("trigger-modal").setAttribute("data-target","#ErrorModal")
+            setTimeout(function(){ document.getElementById("trigger-modal").click() }, 1000);
+        }
+
+
+        //this.newPass = this.NewPass.value 
+        //this.confirmNewPass = this.ConfirmNewPass.value 
+        //this.userController.updatePasswordData(
+        //document.querySelector("#savePassword").id, this.oldPass,
+        //this.newPass, this.confirmNewPass
+        //)
+    }   
+
+
+    showPass() {
+        this.showPassword.addEventListener('click', function(){
+            let passwords = document.querySelectorAll('.show-password')
+            
+            for (const pass of passwords) {
+                if (pass.type === "password") {
+                    pass.type = "text";
+
+                } else {
+                    pass.type = "password";
+                }
+            }
+        
+        })
+    }
+
+   // changeRigthSide(){
+   //     document.querySelector("#InventoryButton").addEventListener("click", () =>{
+   //         document.querySelector("#parteDireita").innerHTML = 
+   //     })
+   // }
     
     
 }

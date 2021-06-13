@@ -25,6 +25,7 @@
 
     <a href="../index.html" id="send-user-to-index" style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#adminManagementModal" id="AdminModalTrigger" style="visibility: hidden;"></a>
+    <a data-toggle="modal" data-target="#AddCategoryModal" id="CategoryModalTrigger" style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#confirmationModal" id="ConfirmationModalTrigger" style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#ErrorModal" id="ErrorModalTrigger" style="visibility: hidden;"></a>
     
@@ -159,6 +160,52 @@
                                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="btn btn-success" id="confirmButton">Confirm</button>
                                 <button type="button" id="close-modal-2" data-dismiss="modal" style="visibility: hidden;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Category modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal fade" id="AddCategoryModal" tabindex="-1" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Category</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group text-align-center" id="textOfCategoryModal">
+                                    <p></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CategoryName">Name</label>
+                                    <input class="form-control" type="text" id="CategoryName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CategoryText">Text</label>
+                                    <input class="form-control" type="text" id="CategoryText" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CategoryImage">Image</label>
+                                    <input class="form-control" type="text" id="CategoryImage" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CategoryColor">Color</label>
+                                    <input class="form-control" type="text" id="CategoryColor" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center align-items-center">
+                                <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-success" id="confirmButton2">Confirm</button>
+                                <button type="button" id="close-modal-3" data-dismiss="modal" style="visibility: hidden;"></button>
                             </div>
                         </div>
                     </div>

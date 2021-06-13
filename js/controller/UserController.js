@@ -117,4 +117,22 @@ export default class UserController {
                 alert("Erro, o username já está a ser utilizado!");
             }
     }
+
+
+
+
+
+    setNewPassword(newPassword){
+        this.getAllLoggedInInfo().password = newPassword
+        localStorage.removeItem("users")
+        localStorage.setItem("users", JSON.stringify(this.users));
+    }
+
+
+
+
+    
+    getOldPassword(){
+        return this.getAllLoggedInInfo().password
+    }
 }

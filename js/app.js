@@ -3,6 +3,8 @@ import AdminView from './view/adminView.js'
 import NavView from './view/navbarView.js'
 import CategoriesView from './view/categoriesView.js';
 import ProfileView from './view/profileView.js';
+import ActivitiesView from './view/ActivitiesView.js';
+import StoreView from './view/storeView.js';
 
 class App {
     constructor() {
@@ -25,6 +27,14 @@ class App {
             ],
             'profile': [
                 ProfileView,
+                NavView
+            ],
+            'activities': [
+                ActivitiesView,
+                NavView
+            ],
+            'store': [
+                StoreView,
                 NavView
             ]
         };
@@ -55,6 +65,33 @@ class App {
 
     // Nós optamos por ter algumas categorias / atividades predefinidas , porém se os administradores quiserem adicionar ou remover, podem.
     #importDataFixtures() {
+
+
+        const store = [
+            {
+                id:1,
+                image: '../img/avatarperfil.png',
+                value:"700"
+            },
+            {
+                id:2,
+                image: '../img/avatarperfil.png',
+                value:"900"
+            },
+            {
+                id:3,
+                image: '../img/avatarperfil.png',
+                value:"500"
+            },
+            {
+                id:4,
+                image: '../img/avatarperfil.png',
+                value:"300"
+            }
+
+        ];
+
+
         const categories = [
             {
                 id: "1",
@@ -87,6 +124,67 @@ class App {
             }
         ];
 
+
+
+        const activities = [
+            {
+                id : '1',
+                category : 'Music',
+                name : 'Rock',
+                image  : '../img/Music2.jpg'
+            },
+            {
+                id : '2',
+                category : 'Music',
+                name : 'Pop',
+                image  : '../img/Music3.jpg'
+            },
+            {
+                id : '3',
+                category : 'Cooking',
+                name : 'Taco',
+                image  : '../img/Cooking2.jpg'
+            },
+            {
+                id : '4',
+                category : 'Cooking',
+                name : 'Spaghetti Bolognese',
+                image  : '../img/Cooking3.jpg'
+            },
+            {
+                id : '5',
+                category : 'Cooking',
+                name : 'Roasted Chicken',
+                image  : '../img/Cooking4.jpg'
+            },
+            {
+                id : '6',
+                category : 'Fit',
+                name : 'Exercise',
+                image  : '../img/Fit2.jpg'
+            },
+            {
+                id : '7',
+                category : 'Fit',
+                name : 'Abs',
+                image  : '../img/Fit3.jpg'
+            },
+            {
+                id : '8',
+                category : 'Literature',
+                name : 'Book1',
+                image  : '../img/Literature2.jpg'
+            },
+            {
+                id : '9',
+                category : 'Literature',
+                name : 'Book2',
+                image  : '../img/Literature3.jpg'
+            }
+        ];
+
+
+
         const admin = [
             {
                 email : 'admin@esmad.ipp.pt',
@@ -105,7 +203,7 @@ class App {
             {
                 email : 'teste@teste.ipp.pt',
                 password : '123',
-                username : 'diogao',
+                username : 'diogo',
                 gender  : 'male',
                 age : '2000-06-13',
                 exp : '0',
@@ -138,6 +236,16 @@ class App {
 
         if (!localStorage.categories) {
             localStorage.setItem('categories', JSON.stringify(categories));
+        }
+
+
+        if (!localStorage.activities) {
+            localStorage.setItem('activities', JSON.stringify(activities));
+        }
+
+
+        if (!localStorage.store) {
+            localStorage.setItem('store', JSON.stringify(store));
         }
     }
 }

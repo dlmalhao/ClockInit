@@ -21,7 +21,7 @@ export default class CategoriesView {
             this.CategoriesRow.innerHTML += 
             `<div class="col-md-4 d-flex justify-center flex-column mb-2">
                 <div class="container category-color mb-2" style="background-color: ${this.categoriesController.categories[i].color};">
-                    <img src="${this.categoriesController.categories[i].image}" alt="">
+                    <a href="./activities.html" style="border: none; background-color: Transparent;" id="${this.categoriesController.categories[i].name}" ><img src="${this.categoriesController.categories[i].image}" alt=""><a>
                 </div>
                 <div class="category title">
                     <p>${this.categoriesController.categories[i].name}</p>
