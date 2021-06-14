@@ -48,7 +48,7 @@ export default class ProfileView {
             this.ProfileEmail.value = this.profileEmail
             this.ProfileGender.value = this.profileGender
             this.ProfileBirth.value = this.profileAge
-
+            this.ImagemPerfil.src = `${this.userController.users[idx].image}`
             this.SaveProfile.id =idx
             
 
@@ -95,7 +95,7 @@ export default class ProfileView {
 
     modalChangePassword(){
         this.changePassBtn.addEventListener("click" , () =>{
-                document.querySelector("#changePasswordModal")
+            document.querySelector("#changePasswordModal")
             
         })
     }
@@ -128,14 +128,15 @@ export default class ProfileView {
                 }
 
             })
-        }
-        catch (e) {
+            
+        }catch (e) {
             let error = String(e).substring(7)
             document.getElementById("error-content").innerHTML = error;
             
-            document.getElementById("trigger-modal").setAttribute("data-target","#ErrorModal")
-            setTimeout(function(){ document.getElementById("trigger-modal").click() }, 1000);
+            document.getElementById("trigger-modal2").setAttribute("data-target","#ErrorModal")
+            setTimeout(function(){ document.getElementById("trigger-modal2").click() }, 1000);
         }
+        
 
 
         //this.newPass = this.NewPass.value 

@@ -97,26 +97,26 @@ export default class UserController {
 
     // Função que permite editar dados do perfil do utilizador
     updateUserData(id,newUsername, newEmail){
-            // verificar se ja existe alguem com o username que vai ser editado
-            if ((this.users.some(user => user.username == newUsername && user.email == this.getAllLoggedInInfo().email)) || (!this.users.some(user => user.username == newUsername)))  {
-                if(!this.users.some(user => user.email == newEmail)){
-                    // o username pertence ao user logado portanto deixar editar
-                    this.users[id].email = newEmail;
-                    this.users[id].username = newUsername;
-                    localStorage.removeItem("users");
-                    localStorage.setItem("users", JSON.stringify(this.users));
-                    sessionStorage.removeItem('loggedUser');
-                    sessionStorage.setItem('loggedUser', newUsername);
-                    
-                }
-                else{
-                    alert("Erro, o email já está a ser utilizado!");
-                }
-                
-            } else {
-                alert("Erro, o username já está a ser utilizado!");
+        // verificar se ja existe alguem com o username que vai ser editado
+        if ((this.users.some(user => user.username == newUsername && user.email == this.getAllLoggedInInfo().email)) || (!this.users.some(user => user.username == newUsername)))  {
+            if((!this.users.some(user => user.email == newEmail))||((this.users.some(user => user.email == newEmail && user.username == this.getAllLoggedInInfo().username)))){
+                // o username pertence ao user logado portanto deixar editar
+                this.users[id].email = newEmail;
+                this.users[id].username = newUsername;
+                localStorage.removeItem("users");
+                localStorage.setItem("users", JSON.stringify(this.users));
+                sessionStorage.removeItem('loggedUser');
+                sessionStorage.setItem('loggedUser', newUsername);
+                location.reload() 
             }
-    }
+            else{
+                alert("Erro, o email já está a ser utilizado!");
+            }
+            
+        } else {
+            alert("Erro, o username já está a ser utilizado!");
+        }
+}
 
 
 
@@ -163,5 +163,21 @@ export default class UserController {
     removeTemporarilyStuffFromSessionStorage() {
         sessionStorage.removeItem('Temporarily1')
         sessionStorage.removeItem('Temporarily2')
+
+    }
+
+
+
+
+    temporarilySendActivityNameToSessionStorage(value) {
+        sessionStorage.setItem('Temporarily3', value)
+    }
+
+    getActivitySentToSessionStorage(){
+        return sessionStorage.getItem('Temporarily3')
+    }
+
+    removeTemporarilyActivityFromSessionStorage() {
+        sessionStorage.removeItem('Temporarily3')
     }
 }

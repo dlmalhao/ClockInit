@@ -36,6 +36,7 @@ export default class AdminView {
     localStorageData() {
         this.UsersTable = document.querySelector("#users-table")
         this.CategoriesTable = document.querySelector("#categories-table")
+        this.StoreTable = document.querySelector("#store-table")
         for (let i = 0; i < this.adminController.users.length; i++) {
             this.UsersTable.innerHTML += `<tr>
             <th scope="row">${i}</th>
@@ -64,6 +65,16 @@ export default class AdminView {
             <td><img src="${this.adminController.categories[i].image}" style ="width: 5rem; height: 5rem;"></td>
             <td>${this.adminController.categories[i].color}</td>
             <td><button type="button" class="btn btn-danger removecategory" id='${this.adminController.categories[i].id}'>X</button></td>
+          </tr>`
+        }
+
+        for (let i = 0; i < this.adminController.store.length; i++) {
+            this.StoreTable.innerHTML += `<tr>
+            <th scope="row">${i}</th>
+            <td>${this.adminController.store[i].id}</td>
+            <td><img src="${this.adminController.store[i].image}" style ="width: 5rem; height: 5rem;"></td>
+            <td>${this.adminController.store[i].value}</td>
+            <td><button type="button" class="btn btn-danger removeItem" id='${this.adminController.store[i].id}'>X</button></td>
           </tr>`
         }
 
@@ -100,12 +111,22 @@ export default class AdminView {
         this.RemovecategoryButton = document.querySelectorAll(".removecategory")
 
         let controller = this.adminController
-
         for (let button of this.RemovecategoryButton) {
-            button.addEventListener('click', function () {
-                controller.removeCategoryBtn(button.id)
-                window.location.reload()
+
+            for (const category of this.userController.categories) {
+                if(button.id == category.id){
+                    button.addEventListener('click', function () {document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to remove ${category.name} from categories?`
+                    document.querySelector("#ConfirmationModalTrigger").click()
+                    document.querySelector("#yesButton").addEventListener("click", () => {
+                    controller.removeCategoryBtn(button.id)
+                    window.location.reload()
             })
+                
+            })
+                }
+            }
+
+            
         }
     }
     
@@ -130,6 +151,25 @@ export default class AdminView {
         }
     }   
 
+
+    //Função que remove os itens da loja 
+    removeItemStore () {
+        this.RemoveItemButton = document.querySelectorAll(".removeItem")
+
+        let controller = this.adminController
+
+        for (let button of this.RemoveItemButton) {
+            button.addEventListener('click', function () {
+                document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to remove the item with id "${button.id}" ?`
+                        document.querySelector("#ConfirmationModalTrigger").click()
+                        document.querySelector("#yesButton").addEventListener("click", () => {
+                        controller.removeItemBtn(button.id)
+                        window.location.reload()
+                    })
+                
+            })
+        }
+    }
 
 
 

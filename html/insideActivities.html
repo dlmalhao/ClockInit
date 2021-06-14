@@ -9,10 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://kit.fontawesome.com/ab51c64d63.js" crossorigin="anonymous"></script>
+    
 </head>
 
-<body class="categories">
+<body class="activities" style="background-color: white;">
 
     <!-- navbar -->
 
@@ -28,9 +28,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsiva">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item" id="activities-navlink"><a class="nav-link active">Activities</a></li>
+                    <li class="nav-item" id="activities-navlink"><a href="./categories.html" class="nav-link active">Activities</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contacts</a></li>
-                    <li class="nav-item" id="store-btn"><a href="/html/store.html" class="nav-link">Store</a></li>
+                    <li class="nav-item" id="store-btn"><a href="./store.html" class="nav-link">Store</a></li>
                     <li class="nav-item" id="nav-name-of-user"><a href="./profile.html" class="nav-link" id="name-of-user"></a></li>
                     <li class="nav-item" id="logout-btn"><a href="" class="nav-link" id="logout-trigger">Log out</a></li>
                     <li class="nav-item" id="signinButton"><a href="#loginModal" class="nav-link" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
@@ -39,45 +39,36 @@
         </div>
     </nav>
 
-    <div class="back">
-        <div class="text-center" id="categoriesHeader" style="color: white;">Categories</div>
-        <div class="container background-categories">
-
-            <div class="row" id="categories-row">
-                <!-- <div class="col-md-4 d-flex justify-center flex-column mb-2">
-                    <div class="container category-color mb-2">
-                        <img src="../img/Literature.svg" alt="">
-                    </div>
-                    <div class="category title">
-                        <p>Lorem Ipsum</p>
-                    </div>
+    <div id="activity-page">
+        <div class="row mt-3">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="imageBack">
+                    <img id="imgActivity" src="" alt="" style="width: 20rem; height: 20rem;">
                 </div>
-                <div class="col-md-4 d-flex justify-center flex-column mb-2">
-                    <div class="container category-color mb-2">
-                        <img src="../img/Cooking.svg" alt="">
-                    </div>
-                    <div class="category title">
-                        <p>Lorem Ipsum</p>
-                    </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="title d-flex justify-content-center">
+                    <input type="text" id="activityTitle" class="form-control mt-5 text-center" style="width: 50%;" disabled>
                 </div>
-                <div class="col-md-4 d-flex justify-center flex-column mb-2">
-                    <div class="container category-color mb-2">
-                        <img src="../img/Fit.svg" alt="">
-                    </div>
-                    <div class="category title">
-                        <p>Lorem Ipsum</p>
-                    </div>
-                </div> -->
+                <div class="introduction">
+                    <textarea class="form-control mt-5" id="activityIntroduction" rows="5"  disabled style="resize: none;"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg">
+                <textarea id="activityContent" cols="30" rows="10" disabled style="resize: none;" class="form-control mt-5 mb-5"></textarea>
             </div>
         </div>
     </div>
 
 
-    <a href="../index.html" id="send-user-to-index" style="visibility: hidden;"></a>
+    <a href="../index.html" id="send-user-to-index3" style="visibility: hidden;"></a>
 
 
-    <div class="loader-wrapper">
-        <div class="loader">
+    
+    <div class="loader-wrapper" style="display: none;">
+        <div class="loader2">
 
         </div>
     </div>
@@ -148,14 +139,16 @@
 
 
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script>
         window.addEventListener ("load", function() {
             var loader = document.querySelector(".loader-wrapper");
-            loader.style.display = 'none';
+            loader.style.display = 'inline';
+            setTimeout(function(){ loader.style.display = 'none' },500)
         });
     </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -167,6 +160,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        
+    <script src="https://kit.fontawesome.com/ab51c64d63.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

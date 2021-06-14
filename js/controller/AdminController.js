@@ -1,9 +1,11 @@
 import CategoriesModel from "../model/CategoriesModel.js";
+import StoreModel from "../model/StoreModel.js";
 
 export default class AdminController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
         this.categories = localStorage.categories ? JSON.parse(localStorage.categories) : [];
+        this.store = localStorage.store ? JSON.parse(localStorage.store) : [];
     }
 
 
@@ -25,6 +27,15 @@ export default class AdminController {
         localStorage.setItem("categories", JSON.stringify(this.categories))
     }
        
+
+    // função que remove itens da loja
+    removeItemBtn (id) {
+       let idx = this.store.findIndex(store => store.id === id)
+       this.store.splice(idx,1)
+       localStorage.removeItem("store")
+       localStorage.setItem("store", JSON.stringify(this.store))
+    }
+
 
     // função que bloqueia utilizadores
     blockUserBtn (user2) {

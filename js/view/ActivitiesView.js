@@ -43,7 +43,7 @@ export default class ActivitiesView {
                 document.querySelector("#activities-row").innerHTML += `
                 <div class="col-md-4 d-flex justify-center flex-column mb-2">
                     <div class="container activity-color mb-2" style="background-color: ${categoryColor};">
-                      <a href="./activities.html" class="CategoryRedirect" style="border: none; background-color: Transparent;" id="" ><img src="${activity.image}" alt=""><a>
+                      <a href="./insideActivities.html" class="ActivityRedirect" style="border: none; background-color: Transparent;" id="${activity.id}" ><img src="${activity.image}" alt=""><a>
                     </div>
                     <div class="category title">
                         <p>${activity.name}</p>
@@ -51,5 +51,16 @@ export default class ActivitiesView {
                 </div>`
             }
         }
+
+
+        for(let btn of document.querySelectorAll(".ActivityRedirect")) {
+            btn.addEventListener("click", () => {
+                let idOfBtn = btn.id
+                this.userController.temporarilySendActivityNameToSessionStorage(idOfBtn)
+            })
+        }
     }
+
+
+
 }

@@ -5,6 +5,8 @@ import CategoriesView from './view/categoriesView.js';
 import ProfileView from './view/profileView.js';
 import ActivitiesView from './view/ActivitiesView.js';
 import StoreView from './view/storeView.js';
+import InsideActivitiesView from './view/insideActivityView.js';
+
 
 class App {
     constructor() {
@@ -35,6 +37,10 @@ class App {
             ],
             'store': [
                 StoreView,
+                NavView
+            ],
+            'insideActivities': [
+                InsideActivitiesView,
                 NavView
             ]
         };
@@ -131,55 +137,73 @@ class App {
                 id : '1',
                 category : 'Music',
                 name : 'Rock',
-                image  : '../img/Music2.jpg'
+                image  : '../img/Music2.jpg',
+                introduction : 'Rock ‘n’ roll was born from the mixture of various musical styles: rhythm and blues, gospel music, folk music, blues, country and jazz. Before the style became famous, the expression was already found in movies, commercials and music.',
+                content : 'If you are a Rock ’n’ roll lover, we think that you will like the following bands: \n -The Clash \n -The Doors \n -The Animals \n -Lynyrd Skynyrd \n -Eagles \n -Dire Straits \n -Elton John \n -Prince \n -The Police '
             },
             {
                 id : '2',
                 category : 'Music',
                 name : 'Pop',
-                image  : '../img/Music3.jpg'
+                image  : '../img/Music3.jpg',
+                introduction : '',
+                content : ''
             },
             {
                 id : '3',
                 category : 'Cooking',
                 name : 'Taco',
-                image  : '../img/Cooking2.png'
+                image  : '../img/Cooking2.png',
+                introduction : '',
+                content : ''
             },
             {
                 id : '4',
                 category : 'Cooking',
                 name : 'Spaghetti Bolognese',
-                image  : '../img/Cooking3.png'
+                image  : '../img/Cooking3.png',
+                introduction : '',
+                content : ''
             },
             {
                 id : '5',
                 category : 'Cooking',
                 name : 'Roasted Chicken',
-                image  : '../img/Cooking4.png'
+                image  : '../img/Cooking4.png',
+                introduction : '',
+                content : ''
             },
             {
                 id : '6',
                 category : 'Fit',
                 name : 'Exercise',
-                image  : '../img/Fit2.svg'
+                image  : '../img/Fit2.svg',
+                introduction : '',
+                content : ''
             },
             {
                 id : '7',
                 category : 'Fit',
                 name : 'Abs',
-                image  : '../img/Fit3.svg'
+                image  : '../img/Fit3.svg',
+                introduction : '',
+                content : ''
             },
             {
                 id : '8',
                 category : 'Literature',
                 name : 'Book1',
-                image  : '../img/Literature2.svg'
+                image  : '../img/Literature2.svg',
+                introduction : '',
+                content : ''
             },
             {
                 id : '9',
                 category : 'Literature',
                 name : 'Book2',
-                image  : '../img/Literature3.svg'
+                image  : '../img/Literature3.svg',
+                introduction : '',
+                content : ''
             }
         ];
 
