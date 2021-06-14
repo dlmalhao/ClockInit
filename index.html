@@ -81,7 +81,11 @@
 
     
 
+    <div class="loader-wrapper" style="display: none;">
+        <div class="loader2">
 
+        </div>
+    </div>
 
 
 
@@ -207,6 +211,7 @@
                                 <div class="modal-footer d-flex justify-content-center align-items-center">
                                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-success">Login</button>
+                                    <button type="button" id="close-modal2" data-dismiss="modal"></button>
                                 </div>
                             </form>
                         </div>
@@ -319,7 +324,7 @@
                                     </div>
                                     <h3 class="title">Success!</h3>
                                     <p class="description" id="success-content"> You are now registered to our website! </p>
-                                    <a href=""><button type="button" class="btn">Done</button></a>
+                                    <a href=""><button type="button" class="btn" id="donebtn">Done</button></a>
                                 </div>
                             </div>
                         </div>
@@ -361,6 +366,14 @@
     </div>
 
 
+
+    <script>
+        window.addEventListener ("load", function() {
+            var loader = document.querySelector(".loader-wrapper");
+            loader.style.display = 'inline';
+            setTimeout(function(){ loader.style.display = 'none' },500)
+        });
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

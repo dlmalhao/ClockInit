@@ -107,7 +107,7 @@ export default class UserController {
                     localStorage.setItem("users", JSON.stringify(this.users));
                     sessionStorage.removeItem('loggedUser');
                     sessionStorage.setItem('loggedUser', newUsername);
-                    location.reload() 
+                    
                 }
                 else{
                     alert("Erro, o email já está a ser utilizado!");

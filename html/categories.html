@@ -76,7 +76,11 @@
     <a href="../index.html" id="send-user-to-index" style="visibility: hidden;"></a>
 
 
-    
+    <div class="loader-wrapper">
+        <div class="loader">
+            
+        </div>
+    </div>
 
 
     <!-- Success Modal -->
@@ -144,6 +148,12 @@
 
 
 
+    <script>
+        window.addEventListener ("load", function() {
+            var loader = document.querySelector(".loader-wrapper");
+            loader.style.display = 'none';
+        });
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

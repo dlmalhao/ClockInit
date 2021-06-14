@@ -118,8 +118,19 @@ export default class UserView {
 
                 let successModal = document.querySelector("#SuccessModal")
                 successModal.addEventListener('click', function(){
-                    location.reload()
+                    //var loader = document.querySelector(".loader-wrapper");
+                    //loader.style.display = 'inline';
+                    //document.getElementById("close-modal2").click()
+                    setTimeout(function(){ location.reload(); },1000)
+                   
                 })
+
+                // document.querySelector("#donebtn").addEventListener("click", () => {
+                //     var loader = document.querySelector(".loader-wrapper");
+                //     loader.style.display = 'inline';
+                //     document.getElementById("close-modal2").click()
+                //     setTimeout(function(){ loader.style.display = 'none'; location.reload(); },2000)
+                // })
 
                 
             } catch (e) {

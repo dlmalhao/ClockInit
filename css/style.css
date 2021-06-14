@@ -807,6 +807,54 @@ margin-top: 5%;
 
 
 
+
+
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    left: 0;
+    background-color: #D1EBEC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    width: 160px;
+    height: 160px;
+    margin: 50px auto 0;
+    border-top: 16px solid #FF725E;
+    border-right: 16px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    animation: round 1s linear infinite;
+}
+
+.loader2 {
+    width: 160px;
+    height: 160px;
+    margin: 50px auto 0;
+    top: 40%;
+    border-top: 16px solid #FF725E;
+    border-right: 16px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    animation: round 1s linear infinite;
+}
+
+@keyframes round{
+    100%{ transform: rotate(360deg); }
+}
+
+
+
+
+
+
 /* Media queries */
 
 

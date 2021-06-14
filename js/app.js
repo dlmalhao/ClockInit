@@ -209,9 +209,9 @@ class App {
                 age : '2000-06-13',
                 exp : '0',
                 achieves : '1,2,3,4,5',
-                inventory : '1,2,3,4,5,6',
+                inventory : '',
                 spintime : '',
-                money : '0',
+                money : '1500',
                 status : 'active',
                 role: 'user',
                 image:'img/avatarperfil.png'
