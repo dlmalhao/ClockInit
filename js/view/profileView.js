@@ -1,9 +1,11 @@
 import UserController from '../controller/UserController.js'
+import StoreController from '../controller/StoreController.js';
 
 export default class ProfileView {
     constructor() {
 
         this.userController = new UserController();
+        this.storeController = new StoreController();
         this.sendUser = document.querySelector("#send-user-to-index")
 
         this.ProfileUser = document.querySelector("#profileUser")
@@ -15,20 +17,20 @@ export default class ProfileView {
         this.SaveProfile = document.querySelector(".saveProfile")
         this.changePassBtn = document.querySelector("#changePassbtn")
         this.showPassword = document.querySelector('#show-password')
-        
+        this.ImagemPerfil = document.querySelector("#imagemPerfil")
         
 
    
         
         
-        // this.changeProfileInput()
-        // this.bindIsAnyUserLogged()
-        // this.editProfileInputs()
-        // this.saveProfileInputs()
-        // this.modalChangePassword()
-        // this.changePassword()
-        // this.showPass()
-        // this.changeRigthSide()
+        this.changeProfileInput()
+        this.bindIsAnyUserLogged()
+        this.editProfileInputs()
+        this.saveProfileInputs()
+        this.modalChangePassword()
+        this.changePassword()
+        this.showPass()
+        this.changeRigthSide()
     }
 
 
@@ -161,11 +163,71 @@ export default class ProfileView {
         })
     }
 
-   // changeRigthSide(){
-   //     document.querySelector("#InventoryButton").addEventListener("click", () =>{
-   //         document.querySelector("#parteDireita").innerHTML = 
-   //     })
-   // }
-    
-    
+    changeRigthSide(){
+        document.querySelector("#InventoryButton").addEventListener("click", () =>{
+            document.querySelector("#parteDireita").innerHTML = `<div class="back overflow-auto">
+            <div class="container header">
+                <p>Inventory</p>
+            </div>
+            <div class="row" id="storeItems">
+
+            </div>
+            </div>`
+            
+            document.querySelector("#profileButtons").innerHTML = `
+                 <button type="button" class="btn btn-dark" id="BackToProfile" >Profile</button>
+                 <button type="button" class="btn btn-dark" >Favorites</button>
+                 <button type="button" class="btn btn-dark" id="InventoryButton">Inventory</button>
+                 <button type="button" class="btn btn-dark" id="changePassbtn" href="#changePasswordModal" data-toggle="modal" data-target="#changePasswordModal" >Change Password</button>
+                 <button type="button" class="btn btn-danger">Log Out</button>`
+
+            document.querySelector("#BackToProfile").addEventListener("click", () => {
+                location.reload()
+            })
+
+            
+            let InventoryData = this.userController.getAllLoggedInInfo().inventory
+            let arrayInventory = InventoryData.split(",")
+            let storecontroller = new StoreController();
+            
+            for (const inventoryItem of arrayInventory) {
+
+                for (const item of storecontroller.store) {
+                
+                    if(inventoryItem == item.id){
+                        document.querySelector("#storeItems").innerHTML += `
+                            <div class="col-xl-4">
+                                <div class="container backgroundImg">
+                                    <img src="${item.image}" alt="">
+                                </div>                        
+                                <div class="buttonDiv d-flex align-items-center justify-content-center mt-3 mb-5">
+                                    <button type="button" class="btn btn-dark btnEquipImage" id="${item.id}" style="width: 50%; background-color: #FF725E;">Equip</button>
+                                </div>
+                            </div>     `
+                            
+
+
+                            
+                    }
+                    
+                }
+            }  
+            this.inventoryItemBtn = document.querySelectorAll(".btnEquipImage")
+                console.log(this.inventoryItemBtn)
+                for (const inventoryButton of this.inventoryItemBtn) {
+                    inventoryButton.addEventListener("click",() => {
+                        for (const image of this.storeController.store) {
+                            if(inventoryButton.id == image.id){
+                               document.querySelector("#imagemPerfil").src = `${image.image}`
+
+                               this.userController.UpdateImage(image.image)
+                
+                                location.reload()
+                            }
+                        }
+                    })
+                }   
+
+            })
+   }  
 }

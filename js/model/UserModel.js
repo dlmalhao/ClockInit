@@ -12,5 +12,6 @@ export default class UserModel {
         this.money = "0";
         this.status = "active"
         this.role = "user"
+        this.image = "../img/avatarperfil.png"
     }
 }

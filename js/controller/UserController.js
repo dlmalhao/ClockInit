@@ -129,10 +129,39 @@ export default class UserController {
     }
 
 
-
-
-    
     getOldPassword(){
         return this.getAllLoggedInInfo().password
+    }
+
+
+
+    // Função que atualiza a foto de perfil do utilizador
+    UpdateImage(imageNew){
+        
+        this.getAllLoggedInInfo().image = imageNew
+        localStorage.removeItem("users")
+        localStorage.setItem("users", JSON.stringify(this.users));
+        
+    }
+
+
+    // Funções que permitem instanciar elementos entre a pag de categorias e a de atividades
+    //Não sabemos se terá sido a melhor opção fazer desta forma, mas o resultado era o que nós pretendiamos
+
+    temporarilySendToSessionStorage(name,color) {
+        sessionStorage.setItem('Temporarily1', name);
+        sessionStorage.setItem('Temporarily2', color)
+    }
+
+    getStuffSentToSessionStorage1() {
+       return sessionStorage.getItem('Temporarily1')
+    }
+    getStuffSentToSessionStorage2() {
+        return sessionStorage.getItem('Temporarily2')
+    }
+
+    removeTemporarilyStuffFromSessionStorage() {
+        sessionStorage.removeItem('Temporarily1')
+        sessionStorage.removeItem('Temporarily2')
     }
 }

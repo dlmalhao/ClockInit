@@ -104,6 +104,37 @@
 
     <hr>
 
+
+
+    <!-- Store table -->
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <h4>Store Information</h4>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Value</th>
+            <th scope="col">Remove</th>
+        </tr>
+        </thead>
+        <tbody id="store-table">
+            
+        </tbody>
+    </table>
+    <div class="container addbtn mt-0" >
+        <button type="button" class="btn btn-success addbtn" id='addbuttonStore'>Add</button>
+    </div>
+
+    <hr>
+
     
 
       
@@ -167,6 +198,46 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- Store modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal fade" id="AddStoreModal" tabindex="-1" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Item to Store</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group text-align-center" id="textOfStoreModal">
+                                    <p></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemImage">Image</label>
+                                    <input class="form-control" type="text" id="itemImage" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemValue">Value</label>
+                                    <input class="form-control" type="text" id="itemValue" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center align-items-center">
+                                <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-success" id="confirmButton3">Confirm</button>
+                                <button type="button" id="close-modal-4" data-dismiss="modal" style="visibility: hidden;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Category modal -->

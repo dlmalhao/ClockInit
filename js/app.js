@@ -69,23 +69,23 @@ class App {
 
         const store = [
             {
-                id:1,
-                image: '../img/avatarperfil.png',
+                id:"1",
+                image: 'https://icons.iconarchive.com/icons/diversity-avatars/avatars/1024/batman-icon.png',
                 value:"700"
             },
             {
-                id:2,
-                image: '../img/avatarperfil.png',
+                id:"2",
+                image: 'https://icons-for-free.com/iconfiles/png/512/avatar-1320568024619304547.png',
                 value:"900"
             },
             {
-                id:3,
-                image: '../img/avatarperfil.png',
+                id:"3",
+                image: 'https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png',
                 value:"500"
             },
             {
-                id:4,
-                image: '../img/avatarperfil.png',
+                id:"4",
+                image: 'https://cdn.iconscout.com/icon/free/png-256/boy-avatar-4-1129037.png',
                 value:"300"
             }
 
@@ -143,43 +143,43 @@ class App {
                 id : '3',
                 category : 'Cooking',
                 name : 'Taco',
-                image  : '../img/Cooking2.jpg'
+                image  : '../img/Cooking2.png'
             },
             {
                 id : '4',
                 category : 'Cooking',
                 name : 'Spaghetti Bolognese',
-                image  : '../img/Cooking3.jpg'
+                image  : '../img/Cooking3.png'
             },
             {
                 id : '5',
                 category : 'Cooking',
                 name : 'Roasted Chicken',
-                image  : '../img/Cooking4.jpg'
+                image  : '../img/Cooking4.png'
             },
             {
                 id : '6',
                 category : 'Fit',
                 name : 'Exercise',
-                image  : '../img/Fit2.jpg'
+                image  : '../img/Fit2.svg'
             },
             {
                 id : '7',
                 category : 'Fit',
                 name : 'Abs',
-                image  : '../img/Fit3.jpg'
+                image  : '../img/Fit3.svg'
             },
             {
                 id : '8',
                 category : 'Literature',
                 name : 'Book1',
-                image  : '../img/Literature2.jpg'
+                image  : '../img/Literature2.svg'
             },
             {
                 id : '9',
                 category : 'Literature',
                 name : 'Book2',
-                image  : '../img/Literature3.jpg'
+                image  : '../img/Literature3.svg'
             }
         ];
 
@@ -198,7 +198,8 @@ class App {
                 spintime : '',
                 money : '0',
                 status : 'active',
-                role: 'admin'
+                role: 'admin',
+                image: 'https://icons.iconarchive.com/icons/diversity-avatars/avatars/1024/batman-icon.png'
             },
             {
                 email : 'teste@teste.ipp.pt',
@@ -212,7 +213,8 @@ class App {
                 spintime : '',
                 money : '0',
                 status : 'active',
-                role: 'user'
+                role: 'user',
+                image:'img/avatarperfil.png'
             }
         ];
 

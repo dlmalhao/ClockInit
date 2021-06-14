@@ -16,6 +16,8 @@ export default class AdminView {
         this.removeCategory()
         this.AdminManagement()
         this.AddCategory()
+        this.removeItemStore()
+        this.AddItemStore()
     }
 
 
@@ -280,5 +282,38 @@ export default class AdminView {
     }
 
 
+    //Função responsável pela adição de um novo item na loja
+    AddItemStore (){
+        document.querySelector("#addbuttonStore").addEventListener("click", () => {
+            document.querySelector("#textOfStoreModal").innerHTML = `Which item do you want to add ?`
+            document.querySelector("#StoreModalTrigger").click()
 
+            document.querySelector("#confirmButton3").addEventListener("click", () => {
+                this.ItemImage = document.querySelector("#itemImage")
+                this.ItemValue = document.querySelector("#itemValue")
+                if( this.ItemImage.value == "" || this.ItemValue.value == "" ){
+                    document.querySelector("#error-content").innerHTML = `Invalid format`
+                    document.querySelector("#ErrorModalTrigger").click()
+                }
+                else {
+
+                    //if(this.adminController.ItemExists(this.Item.value)) {
+                    //    document.querySelector("#error-content").innerHTML = `Item already exists`
+                    //    document.querySelector("#ErrorModalTrigger").click()
+                    //}
+                    //else {
+
+                        document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to add  to Store ?`
+
+                        document.getElementById("close-modal-4").click()
+                        document.querySelector("#ConfirmationModalTrigger").click()
+                        document.querySelector("#yesButton").addEventListener("click", () => {
+                            this.adminController.bindAddItem(this.ItemImage.value, this.ItemValue.value)
+                            setTimeout(function() { location.reload() },1000)
+                        })
+                   // }
+                }
+            })
+        })
+    }
 }

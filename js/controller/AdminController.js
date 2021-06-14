@@ -136,4 +136,29 @@ export default class AdminController {
         this.categories.push(new CategoriesModel(newCategoryId, name, text, image, color));
             localStorage.setItem('categories', JSON.stringify(this.categories))
     }
+
+
+
+    // Função que verifica se um item já existe
+    ItemExists(Item) {
+        for (let item of this.store) {
+            if(item.name == Item) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    }
+
+
+
+
+    // Funcão que adiciona um nova item á local storage
+    bindAddItem(image, value){
+        let lastItem = this.store[this.store.length - 1]
+        let newItemId = parseInt(lastItem.id) + 1
+        this.store.push(new StoreModel(newItemId, image, value));
+            localStorage.setItem('store', JSON.stringify(this.store))
+    }
 }
