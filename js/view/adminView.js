@@ -1,6 +1,7 @@
 import AdminController from '../controller/AdminController.js'
 import UserController from '../controller/UserController.js'
 import ActivitiesController from '../controller/ActivitiesController.js'
+import CategoriesController from '../controller/CategoriesController.js'
 
 export default class AdminView {
     constructor() {
@@ -8,6 +9,7 @@ export default class AdminView {
         this.adminController = new AdminController();
         this.userController = new UserController();
         this.activitiesController = new ActivitiesController()
+        this.categoriesController = new CategoriesController()
 
         this.sendUser = document.querySelector("#send-user-to-index")
 
@@ -455,6 +457,10 @@ export default class AdminView {
 
     bindFilter() {
         
+        for (const category of this.categoriesController.categories) {
+            document.querySelector("#sltCategory").innerHTML += `<option value="">${category.name}</option>`
+        }
+
         this.btnFilter.addEventListener('click', () => {
             const results = this.adminController.getActivities(this.txtActivity.value, this.sltCategory.value)
 
