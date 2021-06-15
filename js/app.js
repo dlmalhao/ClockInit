@@ -7,6 +7,7 @@ import ActivitiesView from './view/ActivitiesView.js';
 import StoreView from './view/storeView.js';
 import InsideActivitiesView from './view/insideActivityView.js';
 import FooterView from './view/footerView.js'
+import SpinningWheelView from './view/spinningWheelView.js';
 
 
 class App {
@@ -50,6 +51,10 @@ class App {
                 InsideActivitiesView,
                 NavView,
                 FooterView
+            ],
+            'spinningWheel': [
+                SpinningWheelView,
+                NavView
             ]
         };
 

@@ -865,6 +865,79 @@ margin-top: 5%;
 
 
 
+/* Spinning Wheel */
+
+
+
+
+.arrow{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+}
+
+.arrow::before{
+    content: "\1F817";
+    font-size: 50px;
+}
+
+
+
+.SpinWheelBody {
+    background-color: #D1EBEC;
+}
+
+.spinWheel {
+    position: relative;
+    left: 30%;
+    top: 3rem;
+    color: white;
+    background-color: #FF725E;
+    width: 9rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinWheel a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Sets the background image for the wheel */
+td.the_wheel
+{
+    background-image: url(./wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+}
+
+/* Do some css reset on selected elements */
+h1, p
+{
+    margin: 0;
+}
+
+div.html5_logo
+{
+    margin-left:70px;
+}
+
+.margin_bottom
+{
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 /* Media queries */
 

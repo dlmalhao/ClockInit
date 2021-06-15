@@ -181,4 +181,19 @@ export default class UserController {
     removeTemporarilyActivityFromSessionStorage() {
         sessionStorage.removeItem('Temporarily3')
     }
+
+
+
+
+
+
+    addMoneyToUser(money) {
+        console.log(money)
+        let dinheiro = this.getAllLoggedInInfo().money
+        let novaQuantia = parseInt(money) + parseInt(dinheiro)
+        console.log(String(novaQuantia))
+        this.getAllLoggedInInfo().money = String(novaQuantia)
+        localStorage.removeItem("users")
+        localStorage.setItem("users", JSON.stringify(this.users));
+    }
 }
