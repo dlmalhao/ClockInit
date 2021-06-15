@@ -4,6 +4,7 @@ export default class UserController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
         this.categories = localStorage.categories ? JSON.parse(localStorage.categories) : [];
+        this.activities = localStorage.activities ? JSON.parse(localStorage.activities) : [];
         
     }
 

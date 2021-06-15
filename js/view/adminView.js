@@ -18,6 +18,8 @@ export default class AdminView {
         this.AddCategory()
         this.removeItemStore()
         this.AddItemStore()
+        this.AddNewActivity()
+        this.removeActivity()
     }
 
 
@@ -37,6 +39,8 @@ export default class AdminView {
         this.UsersTable = document.querySelector("#users-table")
         this.CategoriesTable = document.querySelector("#categories-table")
         this.StoreTable = document.querySelector("#store-table")
+        this.ActivitiesTable = document.querySelector("#activities-table")
+        
         for (let i = 0; i < this.adminController.users.length; i++) {
             this.UsersTable.innerHTML += `<tr>
             <th scope="row">${i}</th>
@@ -75,6 +79,20 @@ export default class AdminView {
             <td><img src="${this.adminController.store[i].image}" style ="width: 5rem; height: 5rem;"></td>
             <td>${this.adminController.store[i].value}</td>
             <td><button type="button" class="btn btn-danger removeItem" id='${this.adminController.store[i].id}'>X</button></td>
+          </tr>`
+        }
+
+        for (let i = 0; i < this.adminController.activities.length; i++) {
+            this.ActivitiesTable.innerHTML += `
+            <tr>
+            <th scope="row">${i}</th>
+            <td>${this.adminController.activities[i].id}</td>
+            <td>${this.adminController.activities[i].category}</td>
+            <td>${this.adminController.activities[i].name}</td>
+            <td><img src="${this.adminController.activities[i].image}" style ="width: 5rem; height: 5rem;"></td>
+            <td>${this.adminController.activities[i].introduction}</td>
+            <td>${this.adminController.activities[i].content}</td>
+            <td><button type="button" class="btn btn-danger removeActivity" id='${this.adminController.activities[i].id}'>X</button></td>
           </tr>`
         }
 
@@ -129,6 +147,31 @@ export default class AdminView {
             
         }
     }
+
+
+        // função que remove atividades
+        removeActivity () {
+            this.RemoveActivityButton = document.querySelectorAll(".removeActivity")
+    
+            let controller = this.adminController
+            for (let button of this.RemoveActivityButton) {
+    
+                for (const activity of this.userController.activities) {
+                    if(button.id == activity.id){
+                        button.addEventListener('click', function () {document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to remove ${activity.name} from activities?`
+                        document.querySelector("#ConfirmationModalTrigger").click()
+                        document.querySelector("#yesButton").addEventListener("click", () => {
+                        controller.removeActivityBtn(button.id)
+                        window.location.reload()
+                })
+                    
+                })
+                    }
+                }
+    
+                
+            }
+        }
     
 
 
@@ -349,6 +392,48 @@ export default class AdminView {
                         document.querySelector("#ConfirmationModalTrigger").click()
                         document.querySelector("#yesButton").addEventListener("click", () => {
                             this.adminController.bindAddItem(this.ItemImage.value, this.ItemValue.value)
+                            setTimeout(function() { location.reload() },1000)
+                        })
+                   // }
+                }
+            })
+        })
+    }
+
+
+
+
+
+    //Função responsável pela adição de uma nova atividade 
+    AddNewActivity (){
+        document.querySelector("#addbuttonActivity").addEventListener("click", () => {
+            document.querySelector("#textOfActivityModal").innerHTML = `Which activity do you want to add ?`
+            document.querySelector("#ActivityModalTrigger").click()
+
+            document.querySelector("#confirmButton4").addEventListener("click", () => {
+                this.ActivityCategory = document.querySelector("#ActivityCategory")
+                this.ActivityName = document.querySelector("#ActivityName")
+                this.ActivityImage = document.querySelector("#ActivityImage")
+                this.ActivityIntro = document.querySelector("#ActivityIntro")
+                this.ActivityContent = document.querySelector("#ActivityContent")
+                if( this.ActivityCategory.value == "" || this.ActivityName.value == "" || this.ActivityImage.value == "" || this.ActivityIntro.value == "" || this.ActivityContent.value == "" ){
+                    document.querySelector("#error-content").innerHTML = `Invalid format`
+                    document.querySelector("#ErrorModalTrigger").click()
+                }
+                else {
+
+                    //if(this.adminController.ItemExists(this.Item.value)) {
+                    //    document.querySelector("#error-content").innerHTML = `Item already exists`
+                    //    document.querySelector("#ErrorModalTrigger").click()
+                    //}
+                    //else {
+
+                        document.querySelector("#confirmationModalContent").innerHTML = `Are you sure you want to add  to Activities ?`
+
+                        document.getElementById("close-modal-5").click()
+                        document.querySelector("#ConfirmationModalTrigger").click()
+                        document.querySelector("#yesButton").addEventListener("click", () => {
+                            this.adminController.bindAddActivity(this.ActivityCategory.value, this.ActivityName.value, this.ActivityImage.value, this.ActivityIntro.value, this.ActivityContent.value)
                             setTimeout(function() { location.reload() },1000)
                         })
                    // }

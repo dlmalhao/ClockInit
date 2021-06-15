@@ -296,7 +296,18 @@ body {
     text-align: center;
 }
 
+/* Footer */
 
+footer{
+    background-color: black;
+}
+
+.fixarRodape {
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
 
 /* Modais Index Page*/
 

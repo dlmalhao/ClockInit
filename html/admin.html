@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/ab51c64d63.js" crossorigin="anonymous"></script>
 </head>
@@ -27,9 +28,11 @@
     <a data-toggle="modal" data-target="#adminManagementModal" id="AdminModalTrigger" style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#AddCategoryModal" id="CategoryModalTrigger" style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#AddStoreModal" id="StoreModalTrigger" style="visibility: hidden;"></a>
-    <a data-toggle="modal" data-target="#confirmationModal" id="ConfirmationModalTrigger" style="visibility: hidden;"></a>
+    <a data-toggle="modal" data-target="#AddActivityModal" id="ActivityModalTrigger" style="visibility: hidden;"></a>
+    <a data-toggle="modal" data-target="#confirmationModal" id="ConfirmationModalTrigger"
+        style="visibility: hidden;"></a>
     <a data-toggle="modal" data-target="#ErrorModal" id="ErrorModalTrigger" style="visibility: hidden;"></a>
-    
+
 
 
 
@@ -43,29 +46,29 @@
 
     <table class="table">
         <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">Username</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Role</th>
-            <th scope="col">Age</th>
-            <th scope="col">Exp</th>
-            <th scope="col">Achieves</th>
-            <th scope="col">Inv</th>
-            <th scope="col">Spin</th>
-            <th scope="col">Money</th>
-            <th scope="col">Remove</th>
-            <th scope="col">Block</th>
-        </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Username</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Role</th>
+                <th scope="col">Age</th>
+                <th scope="col">Exp</th>
+                <th scope="col">Achieves</th>
+                <th scope="col">Inv</th>
+                <th scope="col">Spin</th>
+                <th scope="col">Money</th>
+                <th scope="col">Remove</th>
+                <th scope="col">Block</th>
+            </tr>
         </thead>
         <tbody id="users-table">
-          
+
         </tbody>
     </table>
-    
-    <div class="container addbtn mt-0 d-flex align-items-center" >
+
+    <div class="container addbtn mt-0 d-flex align-items-center">
         <p class="mb-0">Admin Management: </p>
         <button type="button" class="btn btn-dark addbtn ml-2" id='addAdminButton'>Add</button>
         <button type="button" class="btn btn-dark addbtn ml-2" id='removeAdminButton'>Remove</button>
@@ -86,20 +89,20 @@
 
     <table class="table">
         <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Image</th>
-            <th scope="col">Color</th>
-            <th scope="col">Remove</th>
-        </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Color</th>
+                <th scope="col">Remove</th>
+            </tr>
         </thead>
         <tbody id="categories-table">
-            
+
         </tbody>
     </table>
-    <div class="container addbtn mt-0" >
+    <div class="container addbtn mt-0">
         <button type="button" class="btn btn-success addbtn" id='addbutton'>Add</button>
     </div>
 
@@ -118,34 +121,70 @@
 
     <table class="table">
         <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Id</th>
-            <th scope="col">Image</th>
-            <th scope="col">Value</th>
-            <th scope="col">Remove</th>
-        </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Image</th>
+                <th scope="col">Value</th>
+                <th scope="col">Remove</th>
+            </tr>
         </thead>
         <tbody id="store-table">
-            
+
         </tbody>
     </table>
-    <div class="container addbtn mt-0" >
+    <div class="container addbtn mt-0">
         <button type="button" class="btn btn-success addbtn" id='addbuttonStore'>Add</button>
     </div>
 
     <hr>
 
-    
 
-      
-      
+
+
+    <!-- Activities table -->
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <h4>Activities Information</h4>
+            </div>
+        </div>
+    </div>
+    <div class="overflow-auto" style="height:30rem;">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col" style="width: 20%;">Introduction</th>
+                    <th scope="col" style="width: 20%;">Content</th>
+                    <th scope="col">Remove</th>
+                </tr>
+            </thead>
+        
+            <tbody id="activities-table">
+            
+            </tbody>
+        
+        </table>
+    </div>
+    <div class="container addbtn mt-0">
+        <button type="button" class="btn btn-success addbtn" id='addbuttonActivity'>Add</button>
+    </div>
+
+    <hr>
+
+
+
     <!-- Confirmation Modal -->
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="modal fade" id="confirmationModal" tabindex="-1" >
+                <div class="modal fade" id="confirmationModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -153,7 +192,7 @@
                                 <button class="close" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body" id="confirmationModalContent">
-                                
+
                             </div>
                             <div class="modal-footer d-flex justify-content-center align-items-center">
                                 <button class="btn btn-danger" data-dismiss="modal">No</button>
@@ -172,7 +211,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="modal fade" id="adminManagementModal" tabindex="-1" >
+                <div class="modal fade" id="adminManagementModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -191,7 +230,8 @@
                             <div class="modal-footer d-flex justify-content-center align-items-center">
                                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="btn btn-success" id="confirmButton">Confirm</button>
-                                <button type="button" id="close-modal-2" data-dismiss="modal" style="visibility: hidden;"></button>
+                                <button type="button" id="close-modal-2" data-dismiss="modal"
+                                    style="visibility: hidden;"></button>
                             </div>
                         </div>
                     </div>
@@ -207,7 +247,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="modal fade" id="AddStoreModal" tabindex="-1" >
+                <div class="modal fade" id="AddStoreModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -230,7 +270,8 @@
                             <div class="modal-footer d-flex justify-content-center align-items-center">
                                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="btn btn-success" id="confirmButton3">Confirm</button>
-                                <button type="button" id="close-modal-4" data-dismiss="modal" style="visibility: hidden;"></button>
+                                <button type="button" id="close-modal-4" data-dismiss="modal"
+                                    style="visibility: hidden;"></button>
                             </div>
                         </div>
                     </div>
@@ -246,7 +287,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="modal fade" id="AddCategoryModal" tabindex="-1" >
+                <div class="modal fade" id="AddCategoryModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -277,7 +318,8 @@
                             <div class="modal-footer d-flex justify-content-center align-items-center">
                                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                 <button type="button" class="btn btn-success" id="confirmButton2">Confirm</button>
-                                <button type="button" id="close-modal-3" data-dismiss="modal" style="visibility: hidden;"></button>
+                                <button type="button" id="close-modal-3" data-dismiss="modal"
+                                    style="visibility: hidden;"></button>
                             </div>
                         </div>
                     </div>
@@ -286,6 +328,57 @@
         </div>
     </div>
 
+
+
+    <!-- Activity modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="modal fade" id="AddActivityModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add Activity</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group text-align-center" id="textOfActivityModal">
+                                    <p></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ActivityCategory">Category</label>
+                                    <input class="form-control" type="text" id="ActivityCategory" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ActivityName">Name</label>
+                                    <input class="form-control" type="text" id="ActivityName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ActivityImage">Image</label>
+                                    <input class="form-control" type="text" id="ActivityImage" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ActivityIntro">Introduction</label>
+                                    <input class="form-control" type="text" id="ActivityIntro" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ActivityContent">Content</label>
+                                    <input class="form-control" type="text" id="ActivityContent" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center align-items-center">
+                                <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-success" id="confirmButton4">Confirm</button>
+                                <button type="button" id="close-modal-5" data-dismiss="modal"
+                                    style="visibility: hidden;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Error Modal -->
 
@@ -297,14 +390,16 @@
                     <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content clearfix" id="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">×</span></button>
                                 <div class="modal-body">
                                     <div class="icon" id="icon">
                                         <i class="fas fa-times-circle"></i>
                                     </div>
                                     <h3 class="title">Error!</h3>
-                                    <p class="description" id="error-content"> Register failed!  </p>
-                                    <a data-dismiss="modal"><button type="button" id="modalBtn" data class="btn">Try again</button></a>
+                                    <p class="description" id="error-content"> Register failed! </p>
+                                    <a data-dismiss="modal"><button type="button" id="modalBtn" data class="btn">Try
+                                            again</button></a>
                                 </div>
                             </div>
                         </div>
@@ -325,7 +420,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-        <script type="module" src="/js/app.js"></script>
+    <script type="module" src="/js/app.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>

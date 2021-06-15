@@ -1,11 +1,13 @@
 import CategoriesModel from "../model/CategoriesModel.js";
 import StoreModel from "../model/StoreModel.js";
+import ActivitiesModel from "../model/ActivitiesModel.js";
 
 export default class AdminController {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
         this.categories = localStorage.categories ? JSON.parse(localStorage.categories) : [];
         this.store = localStorage.store ? JSON.parse(localStorage.store) : [];
+        this.activities = localStorage.activities ? JSON.parse(localStorage.activities) : [];
     }
 
 
@@ -25,6 +27,14 @@ export default class AdminController {
         this.categories.splice(idx,1)
         localStorage.removeItem("categories")
         localStorage.setItem("categories", JSON.stringify(this.categories))
+    }
+
+     // função que remove atividades
+     removeActivityBtn (id) {
+        let idx = this.activities.findIndex(activity => activity.id === id)
+        this.activities.splice(idx,1)
+        localStorage.removeItem("activities")
+        localStorage.setItem("activities", JSON.stringify(this.activities))
     }
        
 
@@ -171,5 +181,15 @@ export default class AdminController {
         let newItemId = parseInt(lastItem.id) + 1
         this.store.push(new StoreModel(newItemId, image, value));
             localStorage.setItem('store', JSON.stringify(this.store))
+    }
+
+    // Funcão que adiciona um nova item á local storage
+    bindAddActivity(category, name, image, introduction, content){
+        let lastActivityIdx = this.activities[this.activities.length - 1]
+        let newActivityId = parseInt(lastActivityIdx.id) + 1
+        console.log(lastActivityIdx);
+        console.log(newActivityId);
+        this.activities.push(new ActivitiesModel(newActivityId, category, name, image, introduction, content));
+            localStorage.setItem('activities', JSON.stringify(this.activities))
     }
 }
