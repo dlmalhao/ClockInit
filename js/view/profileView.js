@@ -92,6 +92,7 @@ export default class ProfileView {
             )
         })
     }
+    
 
     modalChangePassword(){
         this.changePassBtn.addEventListener("click" , () =>{

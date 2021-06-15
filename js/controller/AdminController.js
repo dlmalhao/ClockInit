@@ -192,4 +192,27 @@ export default class AdminController {
         this.activities.push(new ActivitiesModel(newActivityId, category, name, image, introduction, content));
             localStorage.setItem('activities', JSON.stringify(this.activities))
     }
+
+
+    getActivities(filterName = '', filterCategory = '', isSorted = false) {
+
+        let filteredActivities = this.activities.filter(
+            activity =>
+                (activity.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === '')
+                &&
+                (activity.category == filterCategory || filterCategory === '')
+        )
+
+        filteredActivities = isSorted ? filteredActivities.sort(this.#compare) : filteredActivities
+
+        return filteredActivities
+    }
+
+    #compare(categoryA, categoryB) {
+        if (categoryA.name > categoryB.name)
+            return 1;
+        if (categoryA.name < categoryB.name)
+            return -1;
+        return 0;
+    }
 }

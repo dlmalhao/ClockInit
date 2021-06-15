@@ -9,7 +9,13 @@ export default class ActivitiesView {
         this.activitiesController = new ActivitiesController();
         this.userController = new UserController();
         this.sendUser = document.querySelector("#send-user-to-index")
-        document.querySelector("#activities-row")
+        
+
+        // Filtros atividades
+        this.txtActivity = document.querySelector("#txtActivity")
+        this.btnFilter = document.querySelector("#btnFilter")
+        this.bindFilter()
+ 
 
         this.updateActivitiesInPage ()
     }
@@ -61,6 +67,29 @@ export default class ActivitiesView {
         }
     }
 
+
+    bindFilter(){
+        this.btnFilter.addEventListener('click', () => {
+            const results = this.activitiesController.getActivities(this.txtActivity.value)
+
+            const table = document.querySelector("#activities-row")
+            table.innerHTML ='';
+            
+            
+
+            for (let i = 0; i < results.length; i++) {
+                table.innerHTML += `
+                <div class="col-md-4 d-flex justify-center flex-column mb-2">
+                <div class="container activity-color mb-2" style="background-color: ${categoryColor};">
+                  <a href="./insideActivities.html" class="ActivityRedirect" style="border: none; background-color: Transparent;" id="${results[i].id}" ><img src="${results[i].image}" alt=""><a>
+                </div>
+                <div class="category title">
+                    <p>${results[i].name}</p>
+                </div>
+            </div>`
+           }
+        })
+    }
 
 
 }

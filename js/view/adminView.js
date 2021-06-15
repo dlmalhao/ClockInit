@@ -1,13 +1,23 @@
 import AdminController from '../controller/AdminController.js'
 import UserController from '../controller/UserController.js'
+import ActivitiesController from '../controller/ActivitiesController.js'
 
 export default class AdminView {
     constructor() {
 
         this.adminController = new AdminController();
         this.userController = new UserController();
+        this.activitiesController = new ActivitiesController()
 
         this.sendUser = document.querySelector("#send-user-to-index")
+
+        // Filtros atividades
+        this.txtActivity = document.querySelector("#txtActivity")
+        this.sltCategory = document.querySelector("#sltCategory")
+        this.btnFilter = document.querySelector("#btnFilter")
+        this.bindFilter()
+
+
 
         this.bindIsAdminLogged();
         this.localStorageData();
@@ -441,4 +451,51 @@ export default class AdminView {
             })
         })
     }
+
+
+    bindFilter() {
+        
+        this.btnFilter.addEventListener('click', () => {
+            const results = this.adminController.getActivities(this.txtActivity.value, this.sltCategory.value)
+
+            const table = document.querySelector("#activities-table")
+            table.innerHTML ='';
+            
+            
+
+            for (let i = 0; i < results.length; i++) {
+                table.innerHTML += `
+               <tr>
+               <th scope="row">${i}</th>
+               <td>${results[i].id}</td>
+               <td>${results[i].category}</td>
+               <td>${results[i].name}</td>
+               <td><img src="${results[i].image}" style ="width: 5rem; height: 5rem;"></td>
+               <td>${results[i].introduction}</td>
+               <td>${results[i].content}</td>
+               <td><button type="button" class="btn btn-danger removeActivity" id='${results[i].id}'>X</button></td>
+             </tr>`
+           }
+        })
+        
+        
+        
+    }
+
+    
+
+
+
+    //renderActivities(activities = []) {
+    //    
+    //    //// Gerir o catálogo
+    //    let result = '<div class="row row-cols-3">'
+    //    for (const activity of activities) {
+    //        result += this.generateActivity(activity)
+    //    }
+    //    result += '</div>'
+    //    this.catalog.innerHTML = result
+//
+    //   
+    //}
 }
