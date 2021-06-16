@@ -458,10 +458,11 @@ export default class AdminView {
     bindFilter() {
         
         for (const category of this.categoriesController.categories) {
-            document.querySelector("#sltCategory").innerHTML += `<option value="">${category.name}</option>`
+            document.querySelector("#sltCategory").innerHTML += `<option value="${category.name}">${category.name}</option>`
         }
 
         this.btnFilter.addEventListener('click', () => {
+            console.log(this.txtActivity.value + " " + this.sltCategory.value)
             const results = this.adminController.getActivities(this.txtActivity.value, this.sltCategory.value)
 
             const table = document.querySelector("#activities-table")

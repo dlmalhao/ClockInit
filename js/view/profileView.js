@@ -132,10 +132,10 @@ export default class ProfileView {
             
         }catch (e) {
             let error = String(e).substring(7)
-            document.getElementById("error-content").innerHTML = error;
+            document.getElementById("error-content4").innerHTML = error;
             
-            document.getElementById("trigger-modal2").setAttribute("data-target","#ErrorModal")
-            setTimeout(function(){ document.getElementById("trigger-modal2").click() }, 1000);
+            document.getElementById("trigger-modal5").setAttribute("data-target","#ErrorModal")
+            setTimeout(function(){ document.getElementById("trigger-modal5").click() }, 1000);
         }
         
 

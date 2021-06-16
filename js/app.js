@@ -54,7 +54,8 @@ class App {
             ],
             'spinningWheel': [
                 SpinningWheelView,
-                NavView
+                NavView,
+                FooterView
             ]
         };
 
@@ -105,7 +106,7 @@ class App {
             {
                 id:"4",
                 image: 'https://cdn.iconscout.com/icon/free/png-256/boy-avatar-4-1129037.png',
-                value:"300"
+                value:"100"
             }
 
         ];

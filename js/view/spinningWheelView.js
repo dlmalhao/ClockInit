@@ -99,16 +99,28 @@ export default class SpinningWheelView {
             }
 
         })
-            // -------------------------------------------------------
-            // Function for reset button.
-            // -------------------------------------------------------
-        function resetWheel()
-        {
-            theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
-            theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
-            theWheel.draw();                // Call draw to render changes to the wheel.
-            wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
-        }
+        
+        // let spinTimeBef = this.userController.getAllLoggedInInfo().spintime
+        // let spinTimeAft = parseInt(spinTimeBef)
+
+        // const countdown = () => {
+        //     const now = new Date().getTime();
+        //     const aDayLater =  now + 86400000
+        //     const gap = aDayLater - now
+        //     if (gap < 86400000) {
+        //         document.querySelector("#spin_button").setAttribute("disabled","disabled")
+        //     }
+        //     else {
+        //         document.querySelector("#spin_button").setAttribute("disabled","")
+        //     }
+        // }
+        // countdown()
+        // {
+        //     theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+        //     theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+        //     theWheel.draw();                // Call draw to render changes to the wheel.
+        //     wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+        // }
         // -------------------------------------------------------
         // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
         // -------------------------------------------------------
@@ -119,7 +131,8 @@ export default class SpinningWheelView {
         function alertPrize(indicatedSegment)
         {
             let userController = new UserController()
-            alert("You have won " + indicatedSegment.text);
+            document.querySelector("#confirmationModalContent2").innerHTML = `You have won ${indicatedSegment.text}`
+            document.querySelector("#ConfirmationModalTrigger2").click()
             userController.addMoneyToUser(indicatedSegment.text)
             
         }

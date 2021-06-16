@@ -22,7 +22,7 @@ export default class CategoriesView {
     CategoriesDataInput () {
         for (let i = 0; i < this.categoriesController.categories.length; i++){
             this.CategoriesRow.innerHTML += 
-            `<div class="col-md-4 d-flex justify-center flex-column mb-2">
+            `<div class="col-md-4 d-flex justify-center flex-column mb-5">
                 <div class="container category-color mb-2" style="background-color: ${this.categoriesController.categories[i].color};">
                     <a href="./activities.html" class="CategoryRedirect" style="border: none; background-color: Transparent;" id="${this.categoriesController.categories[i].name}" ><img src="${this.categoriesController.categories[i].image}" alt=""><a>
                 </div>

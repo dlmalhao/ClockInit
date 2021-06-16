@@ -309,6 +309,10 @@ footer{
     text-align: center;
 }
 
+.parteBaixo {
+    font-size: small;
+}
+
 /* Modais Index Page*/
 
 
@@ -672,6 +676,7 @@ margin-top: 5%;
     background-color: white;
     padding-top: 5vh;
     padding-bottom: 5vh;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
     /* display: flex;
     justify-content: center; */
 }
@@ -683,6 +688,10 @@ margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.container.activity-color:hover {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
 }
 
 .activity.title {
@@ -708,6 +717,7 @@ margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
 }
 
 
@@ -777,6 +787,7 @@ margin-top: 5%;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    z-index: 500;
 }
 
 
@@ -872,6 +883,7 @@ margin-top: 5%;
 
 .arrow{
     position: absolute;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     color: rgb(0, 0, 0);
@@ -882,7 +894,17 @@ margin-top: 5%;
     font-size: 50px;
 }
 
-
+.spinWheelHeader {
+    background-color: #FF725E;
+    color: white;
+    width: 25%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    margin-top: 5rem;
+}
 
 .SpinWheelBody {
     background-color: #D1EBEC;
@@ -899,6 +921,7 @@ margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
 }
 
 .spinWheel a {

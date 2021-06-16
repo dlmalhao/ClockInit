@@ -36,39 +36,72 @@
 
 
 
-    <span class="arrow"></span>
-
-    <div class="back">
-        <div align="center">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td width="438" height="582" class="the_wheel" align="center" valign="center">
-                        <div class="div">
-                            <canvas id="canvas" width="434" height="434">
-                                <p style="color: white;" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                            </canvas>
-                            <div class="power_controls">
-                                <button class="btn btn-dark" id="spin_button" src="spin_off.png" alt="Spin">Spin</button>
-                                <br /><br />
-                                &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-
-        <a href="../index.html" id="send-user-to-index5" style="visibility: hidden;"></a>
+        <span class="arrow"></span>
+        <div>
+            <div class="container spinWheelHeader">Spinning Wheel</div>
+            <div class="back">
+                <div class="container" align="center" style="background-color: white; margin-bottom: 8rem; padding-top: 1rem;box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td width="438" height="582" class="the_wheel" align="center" valign="center">
+                                <div class="div">
+                                    <canvas id="canvas" width="434" height="434">
+                                        <p style="color: white;" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                                    </canvas>
+                                    <div class="power_controls">
+                                        <button class="btn btn-dark mt-5" id="spin_button" src="spin_off.png" alt="Spin" style="width: 5rem;">Spin</button>
+                                        <br /><br />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
 
-        <div class="loader-wrapper" style="display: none;">
-            <div class="loader2">
-    
+            <a data-toggle="modal" data-target="#confirmationModal2" id="ConfirmationModalTrigger2"></a>
+
+            <a href="../index.html" id="send-user-to-index5" style="visibility: hidden;"></a>
+            <div class="loader-wrapper" style="display: none;">
+                <div class="loader2">
+
+                </div>
             </div>
         </div>
 
+
+
+                <!-- Confirmation Modal -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="modal fade" id="confirmationModal2" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Nice!</h4>
+                                        <button class="close" data-dismiss="modal">x</button>
+                                    </div>
+                                    <div class="modal-body" id="confirmationModalContent2">
+
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center align-items-center">
+                                        <button type="submit" class="btn btn-success" id="yesButton" data-dismiss="modal">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <footer class="page-footer fixarRodape">
+        
+        </footer>
 
         <script>
             window.addEventListener ("load", function() {

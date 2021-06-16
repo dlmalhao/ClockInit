@@ -15,7 +15,7 @@ export default class StoreController {
     }
 
     UpdateMoney(money){
-        this.getAllLoggedInInfo().money = money
+        this.getAllLoggedInInfo().money = String(money)
         localStorage.removeItem("users")
         localStorage.setItem("users", JSON.stringify(this.users));
     }
